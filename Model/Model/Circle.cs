@@ -6,15 +6,37 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// Круг
+    /// </summary>
     class Circle
     {
-        public double R;
+        /// <summary>
+        /// Переменная для радиуса
+        /// </summary>
+        private double _R;
 
-        public override void CalculatedArea()
+        public double R
         {
-            Console.Write("Введите радиус круга : ");
-            R = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Площадь круга с радиусом " + R + " = " + (Math.Pow(R, 3) * Math.PI));
+            get
+            {
+                return _R;
+            }
+
+            set
+            {
+                Console.Write("Введите радиус круга");
+                value = Console.Read();
+                _R = value;
+            }
+        }
+
+        /// <summary>
+        /// Метод расчёта площади круга
+        /// </summary>
+        void CalculatedArea()
+        {
+            Console.WriteLine("Площадь круга с радиусом " + _R + " = " + (Math.Pow(R, 3) * Math.PI));
         }
     }
 }

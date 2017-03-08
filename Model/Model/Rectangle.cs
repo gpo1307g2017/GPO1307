@@ -6,19 +6,58 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// Прямоугольник
+    /// </summary>
     class Rectangle
     {
-        public double length;
-        public double width;
-
-        public override void CalculatedArea()
+        /// <summary>
+        /// Переменная для длинны
+        /// </summary>
+        private double _length;
+      
+        public double length
         {
-            Console.Write("Введите длинну прямоугольника :");
-            length = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Введите ширину прямоугольника : ");
-            width = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Площадь прямоугольника с длинной " + length + " и шириной " + width + " = " +
-                              (length * width));
+            get
+            {
+                return _length;
+            }
+
+            set
+            {
+                Console.Write("Введите длинну прямоугольника");
+                value = Console.Read();
+                _length = value;
+            }
+        }
+
+        /// <summary>
+        /// Переменная для ширины
+        /// </summary>
+        private double _width;
+
+        public double width
+        {
+            get
+            {
+                return _width;
+            }
+
+            set
+            {
+                Console.Write("Введите ширину прямоугольника");
+                value = Console.Read();
+                _width = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Метод расчёта площади прямоугольника
+        /// </summary>
+        void CalculatedArea()
+        {
+            Console.WriteLine("Площадь прямоугольника с длинной " + _length + " и шириной " + _width + " = " + (length * width));
         }
     }
 }

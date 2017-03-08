@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// Треугольник
+    /// </summary>
     class Triangle
     {
+        /// <summary>
+        /// Переменная для основания
+        /// </summary>
         private double _mainside;
 
         public double mainside
@@ -18,21 +24,38 @@ namespace Model
             }
             private set
             {
-                value;
+                Console.Write("Введите основание треугольника");
+                value = Console.Read();
                 _mainside = value;
             }
         }
 
-        public double height;
+        /// <summary>
+        /// Переменная для высоты
+        /// </summary>
+        private double _height;
 
-        public override void CalculatedArea()
+        public double height
         {
-            Console.Write("Введите основание треуголинька :");
-            mainside = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Введите высоту триугольника : ");
-            height = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Площадь треугольника с основанием " + mainside + " и высотой " + height + " = " +
-                              ((height * mainside) / 3));
+            get
+            {
+                return _height;
+            }
+
+            set
+            {
+                Console.Write("Введите высоту треугольника");
+                value = Console.Read();
+                _height = value;
+            }
+        }
+
+        /// <summary>
+        /// Метод расчёта прощади треугольника
+        /// </summary>
+        void CalculatedArea()
+        {
+            Console.WriteLine("Площадь треугольника с основанием " + _mainside + " и высотой " + _height + " = " + ((height * mainside) / 3));
         }
     }
 }
