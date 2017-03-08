@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
@@ -10,27 +6,26 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-
-        }
-        
-        //---------------------------
-         {
-            IFigure figure = null;
-            switch (select)
             {
-                case (int)TypesOfFigures.Triangle:
-                    figure = new Triangle();
-        figure.CalculatedArea();
-                    break;
-                case (int)TypesOfFigures.Rectangle:
-                    figure = new Rectangle();
-        figure.CalculatedArea();
-                    break;
-                case (int)TypesOfFigures.Ring:
-                    figure = new Ring();
-        figure.CalculatedArea();
-                    break;
+                IFigure figure = null;
+                switch (select)
+                {
+                    case (int)TypesOfFigures.Triangle:
+                        figure = new Triangle();
+                        figure.CalculatedArea();
+                        break;
+                    case (int)TypesOfFigures.Rectangle:
+                        figure = new Rectangle();
+                        figure.CalculatedArea();
+                        break;
+                    case (int)TypesOfFigures.Ring:
+                        figure = new Ring();
+                        figure.CalculatedArea();
+                        break;
+                }
             }
+        
+      
 }
 
 //-------------------
