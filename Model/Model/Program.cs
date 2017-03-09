@@ -27,7 +27,7 @@ namespace Model
                     /// <summary>
                     /// Вызов метода для подсчёта площади
                     /// </summary>
-                    figure.CalculatedArea();
+                    figure.ShowArea(CalculatedArea());
                     break;
                 /// <summary>
                 /// Выбор прямоугольника
