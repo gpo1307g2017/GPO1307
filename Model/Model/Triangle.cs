@@ -49,9 +49,19 @@ namespace Model
         /// <summary>
         /// Метод расчёта прощади треугольника
         /// </summary>
-        void CalculatedArea()
+        double CalculatedArea()
         {
-            Console.WriteLine("Площадь треугольника с основанием " + _mainside + " и высотой " + _height + " = " + ((height * mainside) / 3));
+            double triangleArea = ((height * mainside) / 3);
+            return triangleArea;
+        }
+
+        /// <summary>
+        /// Метод вывода площади треугольника
+        /// </summary>
+        /// <param name="area"></param>
+        void ShowArea(double area)
+        {
+            Console.WriteLine("Площадь треугольника с основанием " + _mainside + " и высотой " + _height + " = " + area);
         }
     }
 }

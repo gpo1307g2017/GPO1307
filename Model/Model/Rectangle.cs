@@ -51,9 +51,19 @@ namespace Model
         /// <summary>
         /// Метод расчёта площади прямоугольника
         /// </summary>
-        void CalculatedArea()
+        double CalculatedArea()
         {
-            Console.WriteLine("Площадь прямоугольника с длинной " + _length + " и шириной " + _width + " = " + (length * width));
+            double rectangleArea = (length * width);
+            return rectangleArea;
+        }
+
+        /// <summary>
+        /// Метод вывода площади прямоугольника
+        /// </summary>
+        /// <param name="area"></param>
+        void ShowArea(double area)
+        {
+            Console.WriteLine("Площадь прямоугольника с длинной " + _length + " и шириной " + _width + " = " + area);
         }
     }
 }

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model
+﻿namespace Model
 {
     /// <summary>
     /// Интерфейс фигур
     /// </summary>
     interface IFigure
     {
-        void CalculatedArea();
+        double CalculatedArea();
+
+        void ShowArea(double area);
 
         int SelectFigure();
 

@@ -30,9 +30,19 @@ namespace Model
         /// <summary>
         /// Метод расчёта площади круга
         /// </summary>
-        void CalculatedArea()
+        double CalculatedArea()
         {
-            Console.WriteLine("Площадь круга с радиусом " + _R + " = " + (Math.Pow(R, 3) * Math.PI));
+            double circleArea = (Math.Pow(R, 3) * Math.PI);
+            return circleArea;
+        }
+
+        /// <summary>
+        /// Метод вывода площади круга
+        /// </summary>
+        /// <param name="area"></param>
+        void ShowArea(double area)
+        {
+            Console.WriteLine("Площадь круга с радиусом " + _R + " = " + area);
         }
     }
 }

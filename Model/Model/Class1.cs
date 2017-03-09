@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Model
+namespace ConsoleApplication1
 {
     /// <summary>
     /// Перечисление фигур
