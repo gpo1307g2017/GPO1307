@@ -1,5 +1,5 @@
 ﻿using System;
-using ConsoleApplication1;
+
 
 namespace Model
 {
@@ -9,9 +9,9 @@ namespace Model
         {
 
             Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
-            
+
             int select = Convert.ToInt16(Console.Read());
-            
+
             IFigure figure = null;
 
             /// <summary>
@@ -19,38 +19,49 @@ namespace Model
             /// </summary>
             switch (select)
             {
+                //TODO: В кейсе сделать метод вывода площади
                 /// <summary>
                 /// Выбор треугольника
                 /// </summary>
                 case (int) TypesOfFigures.Triangle:
-                    figure = new Triangle();
+                    Console.Write("Введите основание треугольника: ");
+                    double mainsideTriangle = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Введите высоту треугольника: ");
+                    double heigthTriangle = Convert.ToDouble(Console.ReadLine());
+                    figure = new Triangle(mainsideTriangle, heigthTriangle);
                     /// <summary>
                     /// Вызов метода для подсчёта площади
                     /// </summary>
-                    figure.ShowArea(CalculatedArea());
+                    figure.CalculatedArea();
                     break;
                 /// <summary>
                 /// Выбор прямоугольника
                 /// </summary>
                 case (int) TypesOfFigures.Rectangle:
-                    figure = new Rectangle();
+                    Console.Write("Введите основание треугольника: ");
+                    double lengthRectangle = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Введите высоту треугольника: ");
+                    double widthRectangle = Convert.ToDouble(Console.ReadLine());
+                    figure = new Rectangle(lengthRectangle, widthRectangle);
                     /// <summary>
                     /// Вызов метода для подсчёта площади
                     /// </summary>
-                    figure.ShowArea(CalculatedArea());
+                    figure.CalculatedArea();
                     break;
                 /// <summary>
                 /// Выбор круга
                 /// </summary>
                 case (int) TypesOfFigures.Ring:
-                    figure = new Circle();
+                    Console.Write("Введите радиус круга: ");
+                    double radius = Convert.ToDouble(Console.ReadLine());
+                    figure = new Circle(radius);
                     /// <summary>
                     /// Вызов метода для подсчёта площади
                     /// </summary>
-                    figure.ShowArea(CalculatedArea());
+                    figure.CalculatedArea();
                     break;
             }
-
         }
+
     }
 }

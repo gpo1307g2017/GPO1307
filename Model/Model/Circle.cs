@@ -5,34 +5,29 @@ namespace Model
     /// <summary>
     /// Круг
     /// </summary>
-    class Circle
+    public class Circle : IFigure
     {
+
+        //
+        private double _radius;
+
         /// <summary>
-        /// Переменная для радиуса
+        /// Конструктор локального объявления радиуса
         /// </summary>
-        private double _R;
-
-        public double R
+        /// <param name="radius"></param>
+        public Circle(double radius)
         {
-            get
-            {
-                return _R;
-            }
 
-            set
-            {
-                Console.Write("Введите радиус круга");
-                value = Console.Read();
-                _R = value;
-            }
+            _radius = radius;
         }
+
 
         /// <summary>
         /// Метод расчёта площади круга
         /// </summary>
-        double CalculatedArea()
+        public double  CalculatedArea()
         {
-            double circleArea = (Math.Pow(R, 3) * Math.PI);
+            double circleArea = (Math.Pow(_radius, 3) * Math.PI);
             return circleArea;
         }
 
@@ -40,9 +35,9 @@ namespace Model
         /// Метод вывода площади круга
         /// </summary>
         /// <param name="area"></param>
-        void ShowArea(double area)
+        public void ShowArea(double area)
         {
-            Console.WriteLine("Площадь круга с радиусом " + _R + " = " + area);
+            Console.WriteLine("Площадь круга с радиусом " + _radius + " = " + area);
         }
     }
 }
