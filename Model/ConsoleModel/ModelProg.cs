@@ -1,16 +1,26 @@
 ﻿using System;
+using System.Data;
 using Model;
 
 
 namespace ConsoleModel
 {
 
-    class Program
+    class ModelProg
     {
         static void Main(string[] args)
         {
+            int select = 0;
+          /*  do
+            {
+                Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
+                select = Convert.ToInt32(Console.ReadLine());
+            }
+            while (select != 3 | select != 2 | select != 1);
+          */
             Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
-            int select = Convert.ToInt32(Console.ReadLine());
+            select = Convert.ToInt32(Console.ReadLine());
+          
 
             IFigure figure;
             double figureArea;
@@ -35,7 +45,7 @@ namespace ConsoleModel
                     figureArea = figure.CalculatedArea();
                     figure.ShowArea(figureArea);
 
-                    Console.WriteLine("Нажмите любую кнопку для продолжения");
+                    Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;
                 /// <summary>
@@ -53,7 +63,7 @@ namespace ConsoleModel
                     figureArea = figure.CalculatedArea();
                     figure.ShowArea(figureArea);
 
-                    Console.WriteLine("Нажмите любую кнопку для продолжения");
+                    Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;
                 /// <summary>
@@ -68,7 +78,12 @@ namespace ConsoleModel
                     figureArea = figure.CalculatedArea();
                     figure.ShowArea(figureArea);
 
-                    Console.WriteLine("Нажмите любую кнопку для продолжения");
+                    Console.WriteLine("Нажмите любую кнопку для продолжения...");
+                    Console.Read();
+                    break;
+                default:
+                    Console.WriteLine("Введены неверные данные.");
+                    Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;
             }
