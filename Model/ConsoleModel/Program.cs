@@ -9,13 +9,10 @@ namespace ConsoleModel
     {
         static void Main(string[] args)
         {
-
             Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
-            //TODO: При вводе значений 1, 2 или 3 принемает select как 49,50 или 51 соответственно
-            
             int select = Convert.ToInt32(Console.ReadLine());
 
-            IFigure figure;// = null;
+            IFigure figure;
             double figureArea;
 
             /// <summary>
@@ -28,16 +25,17 @@ namespace ConsoleModel
                 /// </summary>
                 case (int)TypesOfFigures.Triangle:
                     Console.Write("Введите основание треугольника: ");
-                    //TODO: Непонятное исключение типа "Входная строка имела неверный формат."?
                     double mainsideTriangle = Convert.ToDouble(Console.ReadLine());
+
                     Console.Write("Введите высоту треугольника: ");
                     double heigthTriangle = Convert.ToDouble(Console.ReadLine());
+
                     figure = new Triangle(mainsideTriangle, heigthTriangle);
-                    /// <summary>
-                    /// Вызов метода для подсчёта площади
-                    /// </summary>
+                   
                     figureArea = figure.CalculatedArea();
                     figure.ShowArea(figureArea);
+
+                    Console.WriteLine("Нажмите любую кнопку для продолжения");
                     Console.Read();
                     break;
                 /// <summary>
@@ -46,14 +44,16 @@ namespace ConsoleModel
                 case (int)TypesOfFigures.Rectangle:
                     Console.Write("Введите основание прямоугольника: ");
                     double lengthRectangle = Convert.ToDouble(Console.ReadLine());
+
                     Console.Write("Введите высоту треугольника: ");
                     double widthRectangle = Convert.ToDouble(Console.ReadLine());
+
                     figure = new Rectangle(lengthRectangle, widthRectangle);
-                    /// <summary>
-                    /// Вызов метода для подсчёта площади
-                    /// </summary>
+                    
                     figureArea = figure.CalculatedArea();
                     figure.ShowArea(figureArea);
+
+                    Console.WriteLine("Нажмите любую кнопку для продолжения");
                     Console.Read();
                     break;
                 /// <summary>
@@ -62,12 +62,13 @@ namespace ConsoleModel
                 case (int)TypesOfFigures.Ring:
                     Console.Write("Введите радиус круга: ");
                     double radius = Convert.ToDouble(Console.ReadLine());
+
                     figure = new Circle(radius);
-                    /// <summary>
-                    /// Вызов метода для подсчёта площади
-                    /// </summary>
+               
                     figureArea = figure.CalculatedArea();
                     figure.ShowArea(figureArea);
+
+                    Console.WriteLine("Нажмите любую кнопку для продолжения");
                     Console.Read();
                     break;
             }
