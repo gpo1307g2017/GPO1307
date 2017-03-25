@@ -38,7 +38,7 @@ namespace Model
         /// <param name="area"></param>
         public void ShowArea(double area)
         {
-            Console.WriteLine("Площадь треугольника с основанием " + _mainside + " и высотой " + _height + " = " + area);
+            Console.WriteLine("Площадь треугольника с основанием " + _mainside + " и высотой " + _height + " = " + (double) area);
         }
     }
 }

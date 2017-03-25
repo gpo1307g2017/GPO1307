@@ -12,11 +12,10 @@ namespace ConsoleModel
 
             Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
             //TODO: При вводе значений 1, 2 или 3 принемает select как 49,50 или 51 соответственно
-            int select = Convert.ToInt32(Console.Read());
+            
+            int select = Convert.ToInt32(Console.ReadLine());
 
-            select = 1;
-
-            IFigure figure = null;
+            IFigure figure;// = null;
             double figureArea;
 
             /// <summary>
@@ -45,7 +44,7 @@ namespace ConsoleModel
                 /// Ветка прямоугольника
                 /// </summary>
                 case (int)TypesOfFigures.Rectangle:
-                    Console.Write("Введите основание треугольника: ");
+                    Console.Write("Введите основание прямоугольника: ");
                     double lengthRectangle = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Введите высоту треугольника: ");
                     double widthRectangle = Convert.ToDouble(Console.ReadLine());
