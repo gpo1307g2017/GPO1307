@@ -1,0 +1,10 @@
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\ModelForm.exe.config
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\ModelForm.exe
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\ModelForm.pdb
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.csprojResolveAssemblyReference.cache
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.Form1.resources
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.Properties.Resources.resources
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.csproj.GenerateResource.Cache
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.exe
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.pdb
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.TriabgleForm.resources
