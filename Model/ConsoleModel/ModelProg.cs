@@ -41,9 +41,17 @@ namespace ConsoleModel
                     double heigthTriangle = Convert.ToDouble(Console.ReadLine());
 
                     figure = new Triangle(mainsideTriangle, heigthTriangle);
-                   
-                    figureArea = figure.CalculatedArea();
-                    figure.ShowArea(figureArea);
+
+                    try
+                    {
+                        figureArea = figure.CalculatedArea();
+                        figure.ShowArea(figureArea);
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Неверный формат данных в треугольнике");
+                        throw;
+                    }
 
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
@@ -59,10 +67,18 @@ namespace ConsoleModel
                     double widthRectangle = Convert.ToDouble(Console.ReadLine());
 
                     figure = new Rectangle(lengthRectangle, widthRectangle);
-                    
-                    figureArea = figure.CalculatedArea();
-                    figure.ShowArea(figureArea);
 
+                    try
+                    {
+                        figureArea = figure.CalculatedArea();
+                        figure.ShowArea(figureArea);
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Неверный формат данных в прямоугольнике");
+                        throw;
+                    }
+                    
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;
@@ -73,14 +89,23 @@ namespace ConsoleModel
                     Console.Write("Введите радиус круга: ");
                     double radius = Convert.ToDouble(Console.ReadLine());
 
-                    figure = new Circle(radius);
-               
-                    figureArea = figure.CalculatedArea();
-                    figure.ShowArea(figureArea);
+                    figure = new Circle (radius);
 
+                    try
+                    {
+                        figureArea = figure.CalculatedArea();
+                        figure.ShowArea(figureArea);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("неверный формат данных в круге");
+                        throw;
+                    }
+                    
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;
+                // 1 >= select >= 3    
                 default:
                     Console.WriteLine("Введены неверные данные.");
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");

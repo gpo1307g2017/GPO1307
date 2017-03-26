@@ -7,17 +7,14 @@ namespace Model
     /// </summary>
     public class Circle : IFigure
     {
-
-        //
         private double _radius;
-
+        
         /// <summary>
         /// Конструктор локального объявления радиуса
         /// </summary>
         /// <param name="radius"></param>
         public Circle(double radius)
         {
-
             _radius = radius;
         }
 
@@ -25,8 +22,12 @@ namespace Model
         /// <summary>
         /// Метод расчёта площади круга
         /// </summary>
-        public double  CalculatedArea()
+        public double CalculatedArea()
         {
+            if (_radius <= 0)
+            {
+                throw new System.FormatException();
+            }
             double circleArea = (Math.Pow(_radius, 3) * Math.PI);
             return circleArea;
         }
@@ -41,3 +42,4 @@ namespace Model
         }
     }
 }
+

@@ -21,17 +21,20 @@ namespace Model
             _length = length;
             _width = width;
         }
-
-
- 
-
-
-
+        
         /// <summary>
         /// Метод расчёта площади прямоугольника
         /// </summary>
         public double CalculatedArea()
         {
+            if (_length <= 0)
+            {
+                throw new System.FormatException();
+            }
+            if (_width <= 0)
+            {
+                throw new System.FormatException();
+            }
             double rectangleArea = _length * _width ;
             return rectangleArea;
         }

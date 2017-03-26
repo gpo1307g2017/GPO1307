@@ -22,16 +22,24 @@ namespace Model
             _height = heigth;
         }
 
-
         /// <summary>
         /// Метод расчёта прощади треугольника
-        /// </summary>
+        /// </summary>        
         public double CalculatedArea()
         {
+            if (_mainside <=0)
+            {
+                throw new System.FormatException();
+            }
+            if (_height <= 0)
+            {
+                throw new System.FormatException();
+            }
             double triangleArea = ((_height * _mainside) / 3);
             return triangleArea;
-        }
 
+        }
+        
         /// <summary>
         /// Метод вывода площади треугольника
         /// </summary>
