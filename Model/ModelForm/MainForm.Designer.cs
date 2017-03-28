@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.RadButTriangle = new System.Windows.Forms.RadioButton();
-            this.RadButRectangle = new System.Windows.Forms.RadioButton();
             this.RadButCircle = new System.Windows.Forms.RadioButton();
             this.ButAddFigure = new System.Windows.Forms.Button();
+            this.RadButRectangle = new System.Windows.Forms.RadioButton();
             this.ButRemoveFigure = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.ColFigureType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColFigureArea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RadButTriangle = new System.Windows.Forms.RadioButton();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.NumberOfFigure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeOfFigure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FigureArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -60,32 +62,10 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listView1);
-            this.splitContainer1.Size = new System.Drawing.Size(395, 261);
-            this.splitContainer1.SplitterDistance = 129;
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Size = new System.Drawing.Size(462, 261);
+            this.splitContainer1.SplitterDistance = 150;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // RadButTriangle
-            // 
-            this.RadButTriangle.AutoSize = true;
-            this.RadButTriangle.Checked = true;
-            this.RadButTriangle.Location = new System.Drawing.Point(3, 3);
-            this.RadButTriangle.Name = "RadButTriangle";
-            this.RadButTriangle.Size = new System.Drawing.Size(90, 17);
-            this.RadButTriangle.TabIndex = 0;
-            this.RadButTriangle.TabStop = true;
-            this.RadButTriangle.Text = "Треугольник";
-            this.RadButTriangle.UseVisualStyleBackColor = true;
-            // 
-            // RadButRectangle
-            // 
-            this.RadButRectangle.AutoSize = true;
-            this.RadButRectangle.Location = new System.Drawing.Point(3, 26);
-            this.RadButRectangle.Name = "RadButRectangle";
-            this.RadButRectangle.Size = new System.Drawing.Size(105, 17);
-            this.RadButRectangle.TabIndex = 1;
-            this.RadButRectangle.Text = "Прямоугольник";
-            this.RadButRectangle.UseVisualStyleBackColor = true;
             // 
             // RadButCircle
             // 
@@ -107,6 +87,16 @@
             this.ButAddFigure.UseVisualStyleBackColor = true;
             this.ButAddFigure.Click += new System.EventHandler(this.ButAddFigure_Click);
             // 
+            // RadButRectangle
+            // 
+            this.RadButRectangle.AutoSize = true;
+            this.RadButRectangle.Location = new System.Drawing.Point(3, 26);
+            this.RadButRectangle.Name = "RadButRectangle";
+            this.RadButRectangle.Size = new System.Drawing.Size(105, 17);
+            this.RadButRectangle.TabIndex = 1;
+            this.RadButRectangle.Text = "Прямоугольник";
+            this.RadButRectangle.UseVisualStyleBackColor = true;
+            // 
             // ButRemoveFigure
             // 
             this.ButRemoveFigure.Location = new System.Drawing.Point(21, 226);
@@ -115,37 +105,61 @@
             this.ButRemoveFigure.TabIndex = 4;
             this.ButRemoveFigure.Text = "Remove Figure";
             this.ButRemoveFigure.UseVisualStyleBackColor = true;
+            this.ButRemoveFigure.Click += new System.EventHandler(this.ButRemoveFigure_Click);
             // 
-            // listView1
+            // RadButTriangle
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ColFigureType,
-            this.ColFigureArea});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(258, 257);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.RadButTriangle.AutoSize = true;
+            this.RadButTriangle.Checked = true;
+            this.RadButTriangle.Location = new System.Drawing.Point(3, 3);
+            this.RadButTriangle.Name = "RadButTriangle";
+            this.RadButTriangle.Size = new System.Drawing.Size(90, 17);
+            this.RadButTriangle.TabIndex = 0;
+            this.RadButTriangle.TabStop = true;
+            this.RadButTriangle.Text = "Треугольник";
+            this.RadButTriangle.UseVisualStyleBackColor = true;
             // 
-            // ColFigureType
+            // dataGridView2
             // 
-            this.ColFigureType.Text = "Тип фигуры";
-            this.ColFigureType.Width = 121;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NumberOfFigure,
+            this.TypeOfFigure,
+            this.FigureArea});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(304, 257);
+            this.dataGridView2.TabIndex = 2;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // ColFigureArea
+            // NumberOfFigure
             // 
-            this.ColFigureArea.Text = "Площади фигуры";
-            this.ColFigureArea.Width = 132;
+            this.NumberOfFigure.HeaderText = "№фигуры";
+            this.NumberOfFigure.Name = "NumberOfFigure";
+            this.NumberOfFigure.ReadOnly = true;
+            this.NumberOfFigure.Width = 60;
             // 
-            // Form1
+            // TypeOfFigure
+            // 
+            this.TypeOfFigure.HeaderText = "Тип фигуры";
+            this.TypeOfFigure.Name = "TypeOfFigure";
+            this.TypeOfFigure.ReadOnly = true;
+            // 
+            // FigureArea
+            // 
+            this.FigureArea.HeaderText = "Площади фигуры";
+            this.FigureArea.Name = "FigureArea";
+            this.FigureArea.ReadOnly = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 261);
+            this.ClientSize = new System.Drawing.Size(462, 261);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Добавление и удаление фигур";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -153,6 +167,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,9 +180,10 @@
         private System.Windows.Forms.RadioButton RadButTriangle;
         private System.Windows.Forms.Button ButRemoveFigure;
         private System.Windows.Forms.Button ButAddFigure;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader ColFigureType;
-        private System.Windows.Forms.ColumnHeader ColFigureArea;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfFigure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeOfFigure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FigureArea;
     }
 }
 
