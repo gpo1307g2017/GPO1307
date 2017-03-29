@@ -11,13 +11,7 @@ namespace ConsoleModel
         static void Main(string[] args)
         {
             int select = 0;
-          /*  do
-            {
-                Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
-                select = Convert.ToInt32(Console.ReadLine());
-            }
-            while (select != 3 | select != 2 | select != 1);
-          */
+         
             Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
             select = Convert.ToInt32(Console.ReadLine());
           
@@ -98,7 +92,7 @@ namespace ConsoleModel
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("неверный формат данных в круге");
+                        Console.WriteLine("Неверный формат данных в круге");
                         throw;
                     }
                     

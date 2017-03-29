@@ -1,39 +1,44 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace ModelForm
 {
     public partial class MainForm : Form
     {
+        private BindingList<IFigure>  _figures = new BindingList<IFigure>();
 
         public MainForm()
         {
             InitializeComponent();
+            FiguresList.DataSource = _figures;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public BindingList<IFigure> FigureList => _figures;
+
+        /// <summary>
+        /// Кнопка "Добавить фигуру"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddFigureButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private int _numberOfFigure = 1;
-        private void ButAddFigure_Click(object sender, EventArgs e)
-        {
-            string[] row1 = {Convert.ToString(_numberOfFigure),"Треугольник", "51.3"};
-            _numberOfFigure++;
-            dataGridView2.Rows.Add(row1);
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void ButRemoveFigure_Click(object sender, EventArgs e)
-        {
-            if (this.dataGridView2.SelectedRows.Count > 0 && this.dataGridView2.SelectedRows[0].Index != this.dataGridView2.Rows.Count - 1)
+            var addFigure = new AddFigureForm { Owner = this };
+            addFigure.ShowDialog();
+            if (addFigure.FigureDataList != null)
             {
-                this.dataGridView2.Rows.RemoveAt(this.dataGridView2.SelectedRows[0].Index);
+                _figures.Add(addFigure.FigureDataList);
+            }
+            FiguresList.DataSource = null;
+            FiguresList.DataSource = _figures;
+
+        }
+
+        private void RemoveFigureButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in FiguresList.SelectedRows)
+            {
+                FiguresList.Rows.Remove(row);
             }
         }
     }
