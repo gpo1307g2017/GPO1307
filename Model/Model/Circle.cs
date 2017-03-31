@@ -15,6 +15,10 @@ namespace Model
         /// <param name="radius"></param>
         public Circle(double radius)
         {
+            if (radius <= 0)
+            {
+                throw new System.FormatException();
+            }
             _radius = radius;
         }
 
@@ -24,10 +28,6 @@ namespace Model
         /// </summary>
         public double CalculatedArea()
         {
-            if (_radius <= 0)
-            {
-                throw new System.FormatException();
-            }
             double circleArea = (Math.Pow(_radius, 3) * Math.PI);
             return circleArea;
         }

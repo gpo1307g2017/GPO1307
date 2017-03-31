@@ -18,6 +18,14 @@ namespace Model
         /// <param name="heigth"></param>
         public Triangle(double mainside, double heigth)
         {
+            if (mainside <= 0)
+            {
+                throw new System.FormatException();
+            }
+            if (heigth <= 0)
+            {
+                throw new System.FormatException();
+            }
             _mainside = mainside;
             _height = heigth;
         }
@@ -27,14 +35,6 @@ namespace Model
         /// </summary>        
         public double CalculatedArea()
         {
-            if (_mainside <=0)
-            {
-                throw new System.FormatException();
-            }
-            if (_height <= 0)
-            {
-                throw new System.FormatException();
-            }
             double triangleArea = ((_height * _mainside) / 3);
             return triangleArea;
 

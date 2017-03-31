@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Data;
 using Model;
+using System.Text.RegularExpressions;
 
 
 namespace ConsoleModel
@@ -10,36 +10,79 @@ namespace ConsoleModel
     {
         static void Main(string[] args)
         {
-            int select = 0;
-         
+                  
             Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
-            select = Convert.ToInt32(Console.ReadLine());
-          
+
+            //Переменная проверки значений выборки фигуры
+            var stringPattern =new Regex ( @"^[1-3]$");
+            string stringSelect;
+
+            try
+            {
+                stringSelect = Console.ReadLine();
+                if (stringPattern.IsMatch(stringSelect)) { }
+                else throw new FormatException();
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine("Неверный формат данных выбора фигуры");
+                throw;
+            }
+
+            int select = int.Parse(stringSelect);
 
             IFigure figure;
             double figureArea;
+
+            var numberPatern = new Regex(@"[0-9]");
 
             /// <summary>
             /// Выборка фигуры
             /// </summary>
             switch (select)
             {
-                /// <summary>
-                /// Ветка треугольника
-                /// </summary>
                 case (int)TypesOfFigures.Triangle:
                     Console.Write("Введите основание треугольника: ");
-                    double mainsideTriangle = Convert.ToDouble(Console.ReadLine());
+
+                    string stringMainsideTriangle;
+                    double mainsideTriangle;
+                    
+                    try
+                    {
+                        stringMainsideTriangle = Console.ReadLine();
+                        if (numberPatern.IsMatch(stringMainsideTriangle)) {  }
+                        else throw new FormatException();
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Неверный формат данных основания треугольника");
+                        throw;
+                    }
+
+                    mainsideTriangle = double.Parse(stringMainsideTriangle);
 
                     Console.Write("Введите высоту треугольника: ");
-                    double heigthTriangle = Convert.ToDouble(Console.ReadLine());
 
-                    figure = new Triangle(mainsideTriangle, heigthTriangle);
+                    string stringHeigthTriangle;
+                    double heigthTriangle;
 
                     try
                     {
-                        figureArea = figure.CalculatedArea();
-                        figure.ShowArea(figureArea);
+                        stringHeigthTriangle = Console.ReadLine();
+                        if (numberPatern.IsMatch(stringHeigthTriangle)) { }
+                        else throw new FormatException();
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Неверный формат данных высоты треугольника");
+                        throw;
+                    }
+
+                    heigthTriangle = double.Parse(stringMainsideTriangle);
+
+                    try
+                    {
+                        figure = new Triangle(mainsideTriangle, heigthTriangle);
                     }
                     catch (FormatException e)
                     {
@@ -47,61 +90,104 @@ namespace ConsoleModel
                         throw;
                     }
 
+                        figureArea = figure.CalculatedArea();
+                        figure.ShowArea(figureArea);
+
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;
-                /// <summary>
-                /// Ветка прямоугольника
-                /// </summary>
+               
                 case (int)TypesOfFigures.Rectangle:
-                    Console.Write("Введите основание прямоугольника: ");
-                    double lengthRectangle = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Введите длину прямоугольника: ");
 
-                    Console.Write("Введите высоту треугольника: ");
-                    double widthRectangle = Convert.ToDouble(Console.ReadLine());
-
-                    figure = new Rectangle(lengthRectangle, widthRectangle);
+                    string stringLengthRectangle;
+                    double lengthRectangle;
 
                     try
                     {
-                        figureArea = figure.CalculatedArea();
-                        figure.ShowArea(figureArea);
+                        stringLengthRectangle = Console.ReadLine();
+                        if (numberPatern.IsMatch(stringLengthRectangle)) { }
+                        else throw new FormatException();
                     }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Неверный формат данных длины прямоугольника");
+                        throw;
+                    }
+
+                    lengthRectangle = double.Parse(stringLengthRectangle);
+               
+                    Console.Write("Введите ширину прямоугольника: ");
+
+                    string stringWidthRectangle;
+                    double widthRectangle;
+
+                    try
+                    {
+                        stringWidthRectangle = Console.ReadLine();
+                        if (numberPatern.IsMatch(stringWidthRectangle)) { }
+                        else throw new FormatException();
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Неверный формат данных ширины прямоугольника");
+                        throw;
+                    }
+
+                    widthRectangle = double.Parse(stringWidthRectangle);
+
+                    try
+                    {
+                        figure = new Rectangle(lengthRectangle, widthRectangle);
+                    }
+
                     catch (FormatException e)
                     {
                         Console.WriteLine("Неверный формат данных в прямоугольнике");
                         throw;
                     }
-                    
+
+                        figureArea = figure.CalculatedArea();
+                        figure.ShowArea(figureArea);
+                                       
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;
-                /// <summary>
-                /// Ветка круга
-                /// </summary>
+                
                 case (int)TypesOfFigures.Ring:
                     Console.Write("Введите радиус круга: ");
-                    double radius = Convert.ToDouble(Console.ReadLine());
 
-                    figure = new Circle (radius);
+                    string stringRadiusCirlce;
+                    double radiusCirlce;
 
                     try
                     {
-                        figureArea = figure.CalculatedArea();
-                        figure.ShowArea(figureArea);
+                        stringRadiusCirlce = Console.ReadLine();
+                        if (numberPatern.IsMatch(stringRadiusCirlce)) { }
+                        else throw new FormatException();
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Неверный формат данных радиуса круга");
+                        throw;
+                    }
+
+                    radiusCirlce = double.Parse(stringRadiusCirlce);
+
+                    try
+                    {
+                        figure = new Circle(radiusCirlce);
+
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine("Неверный формат данных в круге");
                         throw;
                     }
-                    
-                    Console.WriteLine("Нажмите любую кнопку для продолжения...");
-                    Console.Read();
-                    break;
-                // 1 >= select >= 3    
-                default:
-                    Console.WriteLine("Введены неверные данные.");
+
+                        figureArea = figure.CalculatedArea();
+                        figure.ShowArea(figureArea);
+                            
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
                     break;

@@ -18,6 +18,14 @@ namespace Model
         /// <param name="width"></param>
         public Rectangle(double length, double width)
         {
+            if (length <= 0)
+            {
+                throw new System.FormatException();
+            }
+            if (width <= 0)
+            {
+                throw new System.FormatException();
+            }
             _length = length;
             _width = width;
         }
@@ -27,14 +35,6 @@ namespace Model
         /// </summary>
         public double CalculatedArea()
         {
-            if (_length <= 0)
-            {
-                throw new System.FormatException();
-            }
-            if (_width <= 0)
-            {
-                throw new System.FormatException();
-            }
             double rectangleArea = _length * _width ;
             return rectangleArea;
         }
