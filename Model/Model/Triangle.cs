@@ -35,10 +35,7 @@ namespace Model
         /// </summary>        
         public double CalculatedArea()
         {
-            //TODO: Можно не заводить дополнительную переменную для расчёта
-            double triangleArea = ((_height * _mainside) / 3);
-            return triangleArea;
-
+           return  ((_height * _mainside) / 3);
         }
         
         /// <summary>
