@@ -20,11 +20,13 @@ namespace ConsoleModel
             try
             {
                 stringSelect = Console.ReadLine();
+                //TODO: Плохая практика. Можно написать без пустых скобок. Ниже тоже переделайте.
                 if (stringPattern.IsMatch(stringSelect)) { }
                 else throw new FormatException();
             }
             catch(FormatException e)
             {
+                //TODO: Зачем заново бросаете исключение?
                 Console.WriteLine("Неверный формат данных выбора фигуры");
                 throw;
             }
@@ -36,11 +38,13 @@ namespace ConsoleModel
 
             var numberPatern = new Regex(@"[0-9]");
 
+            //TODO: xml комментарии не должны быть внутри метода
             /// <summary>
             /// Выборка фигуры
             /// </summary>
             switch (select)
             {
+                //TODO: Ниже много дублирующихся фрагментов, исправьте.
                 case (int)TypesOfFigures.Triangle:
                     Console.Write("Введите основание треугольника: ");
 

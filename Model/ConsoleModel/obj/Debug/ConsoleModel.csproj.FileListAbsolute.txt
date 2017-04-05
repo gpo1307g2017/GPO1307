@@ -6,3 +6,11 @@ C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ConsoleModel\bin\Debug\Model.pdb
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ConsoleModel\obj\Debug\ConsoleModel.csprojResolveAssemblyReference.cache
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ConsoleModel\obj\Debug\ConsoleModel.exe
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ConsoleModel\obj\Debug\ConsoleModel.pdb
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\bin\Debug\ConsoleModel.exe.config
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\bin\Debug\ConsoleModel.exe
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\bin\Debug\ConsoleModel.pdb
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\bin\Debug\Model.dll
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\bin\Debug\Model.pdb
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\obj\Debug\ConsoleModel.csprojResolveAssemblyReference.cache
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\obj\Debug\ConsoleModel.exe
+C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\obj\Debug\ConsoleModel.pdb

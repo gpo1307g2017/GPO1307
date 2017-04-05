@@ -35,6 +35,7 @@ namespace Model
         /// </summary>
         public double CalculatedArea()
         {
+            //TODO: Можно не заводить дополнительную переменную для расчёта
             double rectangleArea = _length * _width ;
             return rectangleArea;
         }

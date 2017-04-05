@@ -28,6 +28,7 @@ namespace Model
         /// </summary>
         public double CalculatedArea()
         {
+            //TODO: Можно не заводить дополнительную переменную для расчёта
             double circleArea = (Math.Pow(_radius, 3) * Math.PI);
             return circleArea;
         }

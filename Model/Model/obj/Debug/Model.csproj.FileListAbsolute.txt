@@ -8,3 +8,8 @@ C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\bin\Debug\Model.pdb
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\obj\Debug\Model.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\obj\Debug\Model.pdb
+C:\Users\iKalentii\Documents\GPO1307\Model\Model\bin\Debug\Model.dll
+C:\Users\iKalentii\Documents\GPO1307\Model\Model\bin\Debug\Model.pdb
+C:\Users\iKalentii\Documents\GPO1307\Model\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\iKalentii\Documents\GPO1307\Model\Model\obj\Debug\Model.dll
+C:\Users\iKalentii\Documents\GPO1307\Model\Model\obj\Debug\Model.pdb
