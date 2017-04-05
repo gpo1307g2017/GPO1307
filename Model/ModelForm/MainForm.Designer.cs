@@ -34,6 +34,8 @@
             this.AddFigureButton = new System.Windows.Forms.Button();
             this.RemoveFigureButton = new System.Windows.Forms.Button();
             this.FindFigureButton = new System.Windows.Forms.Button();
+            this.FigureTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FigureAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FiguresGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FiguresList)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +61,9 @@
             // FiguresList
             // 
             this.FiguresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FiguresList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FigureTypeColumn,
+            this.FigureAreaColumn});
             this.FiguresList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FiguresList.Location = new System.Drawing.Point(3, 16);
             this.FiguresList.Name = "FiguresList";
@@ -94,6 +99,18 @@
             this.FindFigureButton.Text = "Find Figure";
             this.FindFigureButton.UseVisualStyleBackColor = true;
             // 
+            // FigureTypeColumn
+            // 
+            this.FigureTypeColumn.HeaderText = "Figure Type";
+            this.FigureTypeColumn.Name = "FigureTypeColumn";
+            this.FigureTypeColumn.ReadOnly = true;
+            // 
+            // FigureAreaColumn
+            // 
+            this.FigureAreaColumn.HeaderText = "Figure Area";
+            this.FigureAreaColumn.Name = "FigureAreaColumn";
+            this.FigureAreaColumn.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +138,7 @@
         private System.Windows.Forms.Button AddFigureButton;
         private System.Windows.Forms.Button RemoveFigureButton;
         private System.Windows.Forms.Button FindFigureButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FigureTypeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FigureAreaColumn;
     }
 }

@@ -37,9 +37,9 @@ namespace ModelForm
 
         private void RemoveFigureButton_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in FiguresList.SelectedRows)
+            foreach (DataGridViewRow listRow in FiguresList.SelectedRows)
             {
-                FiguresList.Rows.Remove(row);
+                FiguresList.Rows.Remove(listRow);
             }
         }
     }

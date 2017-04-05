@@ -29,7 +29,7 @@ namespace Model
         /// <summary>
         /// Свойство площади круга
         /// </summary>
-        public double CalculatedArea() => (Math.Pow(_radius, 3) * Math.PI);
+        public double CalculatedArea() => (Math.Pow(_radius, 2) * Math.PI);
 
         /// <summary>
         /// Метод вывода площади круга

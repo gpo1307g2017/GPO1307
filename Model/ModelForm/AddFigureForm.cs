@@ -7,6 +7,8 @@ namespace ModelForm
 {
     public partial class AddFigureForm : Form
     {
+        private TypesOfFigures _figureType;
+
         public AddFigureForm()
         {
             InitializeComponent();
@@ -27,21 +29,11 @@ namespace ModelForm
         /// <param name="e"></param>
         private void TriangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            MainsideLabel.Visible = true;
-            MainsideTextBox.Visible = true;
-
-            HeightLabel.Visible = true;
-            HeigthTextBox.Visible = true;
-
-            RadiusLabel.Visible = false;
-            RadiusTextBox.Visible = false;
-
-            LengthLabel.Visible = false;
-            LengthTextBox.Visible = false;
-
-            WidthTextBox.Visible = false;
-            WidthLabel.Visible = false;
-
+           // MainsideLabel.Visible = TriangleGroupBox.SelectedIndex == 0;
+            TriangleGroupBox.Visible = true;
+            RectangleGroupBox.Visible = false;
+            CircleGroupBox.Visible = false;
+            _figureType = TypesOfFigures.Triangle;
         }
 
         /// <summary>
@@ -51,20 +43,10 @@ namespace ModelForm
         /// <param name="e"></param>
         private void RectangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            MainsideLabel.Visible = false;
-            MainsideTextBox.Visible = false;
-
-            HeightLabel.Visible = false;
-            HeigthTextBox.Visible = false;
-
-            RadiusLabel.Visible = false;
-            RadiusTextBox.Visible = false;
-
-            LengthLabel.Visible = true;
-            LengthTextBox.Visible = true;
-
-            WidthTextBox.Visible = true;
-            WidthLabel.Visible = true;
+            TriangleGroupBox.Visible = false;
+            RectangleGroupBox.Visible = true;
+            CircleGroupBox.Visible = false;
+            _figureType = TypesOfFigures.Rectangle;
         }
 
         /// <summary>
@@ -74,20 +56,65 @@ namespace ModelForm
         /// <param name="e"></param>
         private void CircleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            MainsideLabel.Visible = false;
-            MainsideTextBox.Visible = false;
+            TriangleGroupBox.Visible = false;
+            RectangleGroupBox.Visible = false;
+            CircleGroupBox.Visible = true;
+            _figureType = TypesOfFigures.Ring;
+        }
 
-            HeightLabel.Visible = false;
-            HeigthTextBox.Visible = false;
+        /// <summary>
+        /// Кнопка "ОК"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        
 
-            RadiusLabel.Visible = true;
-            RadiusTextBox.Visible = true;
+        /// <summary>
+        /// Кнопка "Calculate Area". Расчёт площади фигуры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CalculateFigureAreaButton_Click(object sender, EventArgs e)
+        {
+            switch (_figureType)
+            {
+                case TypesOfFigures.Triangle:
+                    double mainside = Convert.ToDouble(MainsideTextBox.Text);
+                    double heigth = Convert.ToDouble(HeigthTextBox.Text);
+                    _figure = new Triangle(mainside, heigth);
+                    _figure.CalculatedArea();
+                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea());
+                    break;
 
-            LengthLabel.Visible = false;
-            LengthTextBox.Visible = false;
+                case TypesOfFigures.Rectangle:
+                    double length = Convert.ToDouble(LengthTextBox.Text);
+                    double width = Convert.ToDouble(WidthTextBox.Text);
+                    _figure = new Rectangle(length, width);
+                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea());
+                    break;
 
-            WidthTextBox.Visible = false;
-            WidthLabel.Visible = false;
+                case TypesOfFigures.Ring:
+                    _figure = new Circle(Convert.ToDouble(RadiusTextBox.Text));
+                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea());
+                    break;
+
+
+            }
+        }
+
+        /// <summary>
+        /// Кнопка "Close"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            _figure = null;
+            Close();
         }
     }
 }
