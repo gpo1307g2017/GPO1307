@@ -12,7 +12,7 @@ namespace Model
         /// <summary>
         /// Конструктор локального объявления радиуса
         /// </summary>
-        /// <param name="radius"></param>
+        /// <param name="Радиус круга"></param>
         public Circle(double radius)
         {
             if (radius <= 0)
@@ -27,17 +27,14 @@ namespace Model
 
 
         /// <summary>
-        /// Метод расчёта площади круга
+        /// Свойство площади круга
         /// </summary>
-        public double CalculatedArea()
-        {
-            return (Math.Pow(_radius, 3) * Math.PI);
-        }
+        public double CalculatedArea() => (Math.Pow(_radius, 3) * Math.PI);
 
         /// <summary>
         /// Метод вывода площади круга
         /// </summary>
-        /// <param name="area"></param>
+        /// <param name="Площадь круга"></param>
         public void ShowArea(double area)
         {
             Console.WriteLine("Площадь круга с радиусом " + _radius + " = " + area);

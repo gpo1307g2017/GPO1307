@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.FiguresTypeGroupBox = new System.Windows.Forms.GroupBox();
-            this.TriangleRadioButton = new System.Windows.Forms.RadioButton();
-            this.RectangleRadioButton = new System.Windows.Forms.RadioButton();
             this.CircleRadioButton = new System.Windows.Forms.RadioButton();
+            this.RectangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.TriangleRadioButton = new System.Windows.Forms.RadioButton();
             this.MainsideLabel = new System.Windows.Forms.Label();
             this.MainsideTextBox = new System.Windows.Forms.TextBox();
             this.HeigthTextBox = new System.Windows.Forms.TextBox();
@@ -62,16 +62,16 @@
             this.FiguresTypeGroupBox.TabStop = false;
             this.FiguresTypeGroupBox.Text = "Figure";
             // 
-            // TriangleRadioButton
+            // CircleRadioButton
             // 
-            this.TriangleRadioButton.AutoSize = true;
-            this.TriangleRadioButton.Location = new System.Drawing.Point(7, 20);
-            this.TriangleRadioButton.Name = "TriangleRadioButton";
-            this.TriangleRadioButton.Size = new System.Drawing.Size(63, 17);
-            this.TriangleRadioButton.TabIndex = 0;
-            this.TriangleRadioButton.Text = "Triangle";
-            this.TriangleRadioButton.UseVisualStyleBackColor = true;
-            this.TriangleRadioButton.CheckedChanged += new System.EventHandler(this.TriangleRadioButton_CheckedChanged);
+            this.CircleRadioButton.AutoSize = true;
+            this.CircleRadioButton.Location = new System.Drawing.Point(7, 68);
+            this.CircleRadioButton.Name = "CircleRadioButton";
+            this.CircleRadioButton.Size = new System.Drawing.Size(51, 17);
+            this.CircleRadioButton.TabIndex = 2;
+            this.CircleRadioButton.Text = "Circle";
+            this.CircleRadioButton.UseVisualStyleBackColor = true;
+            this.CircleRadioButton.CheckedChanged += new System.EventHandler(this.CircleRadioButton_CheckedChanged);
             // 
             // RectangleRadioButton
             // 
@@ -84,16 +84,16 @@
             this.RectangleRadioButton.UseVisualStyleBackColor = true;
             this.RectangleRadioButton.CheckedChanged += new System.EventHandler(this.RectangleRadioButton_CheckedChanged);
             // 
-            // CircleRadioButton
+            // TriangleRadioButton
             // 
-            this.CircleRadioButton.AutoSize = true;
-            this.CircleRadioButton.Location = new System.Drawing.Point(7, 68);
-            this.CircleRadioButton.Name = "CircleRadioButton";
-            this.CircleRadioButton.Size = new System.Drawing.Size(51, 17);
-            this.CircleRadioButton.TabIndex = 2;
-            this.CircleRadioButton.Text = "Circle";
-            this.CircleRadioButton.UseVisualStyleBackColor = true;
-            this.CircleRadioButton.CheckedChanged += new System.EventHandler(this.CircleRadioButton_CheckedChanged);
+            this.TriangleRadioButton.AutoSize = true;
+            this.TriangleRadioButton.Location = new System.Drawing.Point(7, 20);
+            this.TriangleRadioButton.Name = "TriangleRadioButton";
+            this.TriangleRadioButton.Size = new System.Drawing.Size(63, 17);
+            this.TriangleRadioButton.TabIndex = 0;
+            this.TriangleRadioButton.Text = "Triangle";
+            this.TriangleRadioButton.UseVisualStyleBackColor = true;
+            this.TriangleRadioButton.CheckedChanged += new System.EventHandler(this.TriangleRadioButton_CheckedChanged);
             // 
             // MainsideLabel
             // 

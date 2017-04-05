@@ -14,8 +14,8 @@ namespace Model
         /// <summary>
         /// Конструктор локального объявления длинны и ширины
         /// </summary>
-        /// <param name="length"></param>
-        /// <param name="width"></param>
+        /// <param name="Длинна прямоугольника"></param>
+        /// <param name="Ширина прямоугольника"></param>
         public Rectangle(double length, double width)
         {
             if (length <= 0)
@@ -33,15 +33,13 @@ namespace Model
         /// <summary>
         /// Метод расчёта площади прямоугольника
         /// </summary>
-        public double CalculatedArea()
-        {
-           return _length * _width ;
-        }
+        public double CalculatedArea() => _length * _width ;
+
 
         /// <summary>
         /// Метод вывода площади прямоугольника
         /// </summary>
-        /// <param name="area"></param>
+        /// <param name="Площадь прямоугольника"></param>
         public void ShowArea(double area)
         {
             Console.WriteLine("Площадь прямоугольника с длинной " + _length + " и шириной " + _width + " = " + area);

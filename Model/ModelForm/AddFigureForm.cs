@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Model;
 
 
 namespace ModelForm
@@ -20,7 +21,7 @@ namespace ModelForm
         public IFigure FigureDataList => _figure;
 
         /// <summary>
-        /// Радие-кнопка "Треугольник"
+        /// Радио-кнопка "Треугольник"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -40,8 +41,6 @@ namespace ModelForm
 
             WidthTextBox.Visible = false;
             WidthLabel.Visible = false;
-
-
 
         }
 

@@ -15,10 +15,12 @@ namespace ConsoleModel
             try
             {
                 stringValue = Console.ReadLine();
-                if (numberPatern.IsMatch(stringValue)) { }
-                else throw new FormatException();
+                if (numberPatern.IsMatch(stringValue) != true)
+                { 
+                throw new FormatException();
+                }
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 Console.WriteLine("Неверный формат данных сторон фигры. Обнаружены символы, а ожидались цифры.");
                 throw;
@@ -39,11 +41,12 @@ namespace ConsoleModel
             try
             {
                 stringSelect = Console.ReadLine();
-                //TODO: Плохая практика. Можно написать без пустых скобок. Ниже тоже переделайте.
-                if (stringPattern.IsMatch(stringSelect)) { }
-                else throw new FormatException();
+                if (stringPattern.IsMatch(stringSelect) != true)
+                {
+                    throw new FormatException();
+                }
             }
-            catch(FormatException e)
+            catch(FormatException)
             {
                 //TODO: Зачем заново бросаете исключение?
                 Console.WriteLine("Неверный формат данных выбора фигуры. Обнаружены символы, а ожидались цифры");
@@ -57,7 +60,6 @@ namespace ConsoleModel
 
             switch (select)
             {
-                //TODO: Ниже много дублирующихся фрагментов, исправьте.
                 case (int)TypesOfFigures.Triangle:
                     Console.Write("Введите основание треугольника: ");
 
@@ -75,14 +77,15 @@ namespace ConsoleModel
                     {
                         figure = new Triangle(mainsideTriangle, heigthTriangle);
                     }
-                    catch (FormatException e)
+                    catch (FormatException)
                     {
                         Console.WriteLine("Неверный формат данных в треугольнике");
                         throw;
                     }
 
-                        figureArea = figure.CalculatedArea();
-                        figure.ShowArea(figureArea);
+                    figureArea = figure.CalculatedArea();
+                    Console.WriteLine("Площадь тругольника с основанием {0} и высотой {1} = {2:F3}", mainsideTriangle, heigthTriangle, figureArea);
+                    //figure.ShowArea(figureArea);
 
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
@@ -107,14 +110,16 @@ namespace ConsoleModel
                         figure = new Rectangle(lengthRectangle, widthRectangle);
                     }
 
-                    catch (FormatException e)
+                    catch (FormatException)
                     {
                         Console.WriteLine("Неверный формат данных в прямоугольнике");
                         throw;
                     }
 
-                        figureArea = figure.CalculatedArea();
-                        figure.ShowArea(figureArea);
+                    figureArea = figure.CalculatedArea();
+                    Console.WriteLine("Площадь прямоугольника с шириной {0} и длиной {1} = {2:F4}", lengthRectangle, widthRectangle, figureArea);
+                    //figure.ShowArea(figureArea);
+                    
                                        
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();
@@ -132,14 +137,15 @@ namespace ConsoleModel
                         figure = new Circle(radiusCirlce);
 
                     }
-                    catch (Exception e)
+                    catch (FormatException)
                     {
                         Console.WriteLine("Неверный формат данных в круге");
                         throw;
                     }
 
-                        figureArea = figure.CalculatedArea();
-                        figure.ShowArea(figureArea);
+                    figureArea = figure.CalculatedArea(); //CalculatedArea() => (Math.Pow(_radius, 3) * Math.PI);
+                    Console.WriteLine("Площадь круга с радиусом {0} = {1:F4}", radiusCirlce , figureArea);
+                    //figure.ShowArea(figureArea);
                             
                     Console.WriteLine("Нажмите любую кнопку для продолжения...");
                     Console.Read();

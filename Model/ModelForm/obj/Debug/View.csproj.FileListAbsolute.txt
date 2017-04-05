@@ -4,10 +4,9 @@ C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.pdb
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\ModelForm.exe
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\ModelForm.pdb
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\View.csprojResolveAssemblyReference.cache
-C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.CircleForm.resources
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.MainForm.resources
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.Properties.Resources.resources
-C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.RectangleForm.resources
-C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.TriabgleForm.resources
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\View.csproj.GenerateResource.Cache
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.AddFigureForm.resources
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\Model.dll
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\Model.pdb

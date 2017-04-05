@@ -14,8 +14,8 @@ namespace Model
         /// <summary>
         /// Конструктор лотального объявления основания и высоты
         /// </summary>
-        /// <param name="mainside"></param>
-        /// <param name="heigth"></param>
+        /// <param name="Основание треугольника"></param>
+        /// <param name="Высота треунгольника"></param>
         public Triangle(double mainside, double heigth)
         {
             if (mainside <= 0)
@@ -33,15 +33,13 @@ namespace Model
         /// <summary>
         /// Метод расчёта прощади треугольника
         /// </summary>        
-        public double CalculatedArea()
-        {
-           return  ((_height * _mainside) / 3);
-        }
+        public double CalculatedArea() => ((_height * _mainside) / 3);
+
         
         /// <summary>
         /// Метод вывода площади треугольника
         /// </summary>
-        /// <param name="area"></param>
+        /// <param name="Площадь треугольника"></param>
         public void ShowArea(double area)
         {
             Console.WriteLine("Площадь треугольника с основанием " + _mainside + " и высотой " + _height + " = " + (double) area);

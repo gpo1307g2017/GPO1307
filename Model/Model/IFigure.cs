@@ -18,7 +18,7 @@
         /// <summary>
         /// Метод вывода площади фигуры
         /// </summary>
-        /// <param name="area"></param>
+        /// <param name="Площадь фигур"></param>
         void ShowArea(double area);
 
 
