@@ -28,25 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.FileToolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FiguresGroupBox = new System.Windows.Forms.GroupBox();
             this.FiguresList = new System.Windows.Forms.DataGridView();
             this.AddFigureButton = new System.Windows.Forms.Button();
             this.RemoveFigureButton = new System.Windows.Forms.Button();
             this.FindFigureButton = new System.Windows.Forms.Button();
-            this.FigureTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FigureAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FileToolStrip.SuspendLayout();
             this.FiguresGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FiguresList)).BeginInit();
             this.SuspendLayout();
             // 
             // FileToolStrip
             // 
+            this.FileToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
             this.FileToolStrip.Location = new System.Drawing.Point(0, 0);
             this.FileToolStrip.Name = "FileToolStrip";
             this.FileToolStrip.Size = new System.Drawing.Size(359, 25);
             this.FileToolStrip.TabIndex = 0;
             this.FileToolStrip.Text = "File";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // FiguresGroupBox
             // 
@@ -61,9 +83,6 @@
             // FiguresList
             // 
             this.FiguresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FiguresList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FigureTypeColumn,
-            this.FigureAreaColumn});
             this.FiguresList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FiguresList.Location = new System.Drawing.Point(3, 16);
             this.FiguresList.Name = "FiguresList";
@@ -99,18 +118,6 @@
             this.FindFigureButton.Text = "Find Figure";
             this.FindFigureButton.UseVisualStyleBackColor = true;
             // 
-            // FigureTypeColumn
-            // 
-            this.FigureTypeColumn.HeaderText = "Figure Type";
-            this.FigureTypeColumn.Name = "FigureTypeColumn";
-            this.FigureTypeColumn.ReadOnly = true;
-            // 
-            // FigureAreaColumn
-            // 
-            this.FigureAreaColumn.HeaderText = "Figure Area";
-            this.FigureAreaColumn.Name = "FigureAreaColumn";
-            this.FigureAreaColumn.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,6 +130,8 @@
             this.Controls.Add(this.FileToolStrip);
             this.Name = "MainForm";
             this.Text = "Main Form";
+            this.FileToolStrip.ResumeLayout(false);
+            this.FileToolStrip.PerformLayout();
             this.FiguresGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FiguresList)).EndInit();
             this.ResumeLayout(false);
@@ -138,7 +147,7 @@
         private System.Windows.Forms.Button AddFigureButton;
         private System.Windows.Forms.Button RemoveFigureButton;
         private System.Windows.Forms.Button FindFigureButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FigureTypeColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FigureAreaColumn;
-    }
+		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+	}
 }

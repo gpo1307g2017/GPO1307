@@ -5,7 +5,7 @@ namespace Model
     /// <summary>
     /// Прямоугольник
     /// </summary>
-   public class Rectangle : IFigure
+    public class Rectangle : IFigure
     {
 
         private double _length;
@@ -29,20 +29,24 @@ namespace Model
             _length = length;
             _width = width;
         }
-        
+
+
+
         /// <summary>
         /// Метод расчёта площади прямоугольника
         /// </summary>
-        public double CalculatedArea() => _length * _width ;
+        public double CalculatedArea => Math.Round(_length * _width, 4);
 
 
         /// <summary>
         /// Метод вывода площади прямоугольника
         /// </summary>
         /// <param name="Площадь прямоугольника"></param>
-        public void ShowArea(double area)
+        public string ShowArea()
         {
-            Console.WriteLine("Площадь прямоугольника с длинной " + _length + " и шириной " + _width + " = " + area);
+            return Convert.ToString(Convert.ToString(CalculatedArea));
         }
+
+        public string TypeFigure => "Rectangle";
     }
 }

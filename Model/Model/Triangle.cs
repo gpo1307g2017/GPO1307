@@ -30,19 +30,24 @@ namespace Model
             _height = heigth;
         }
 
+
+
+
         /// <summary>
         /// Метод расчёта прощади треугольника
         /// </summary>        
-        public double CalculatedArea() => ((_height * _mainside) / 3);
+        public double CalculatedArea => Math.Round(((_height * _mainside) / 3), 4);
 
-        
+
         /// <summary>
         /// Метод вывода площади треугольника
         /// </summary>
         /// <param name="Площадь треугольника"></param>
-        public void ShowArea(double area)
+        public string ShowArea()
         {
-            Console.WriteLine("Площадь треугольника с основанием " + _mainside + " и высотой " + _height + " = " + (double) area);
+            return Convert.ToString(Convert.ToString(CalculatedArea));
         }
+
+        public string TypeFigure => "Triangle";
     }
 }

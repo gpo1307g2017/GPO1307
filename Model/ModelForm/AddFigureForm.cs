@@ -29,10 +29,21 @@ namespace ModelForm
         /// <param name="e"></param>
         private void TriangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-           // MainsideLabel.Visible = TriangleGroupBox.SelectedIndex == 0;
-            TriangleGroupBox.Visible = true;
-            RectangleGroupBox.Visible = false;
-            CircleGroupBox.Visible = false;
+            // MainsideLabel.Visible = TriangleGroupBox.SelectedIndex == 0;
+            MainsideLabel.Visible = true;
+            MainsideTextBox.Visible = true;
+
+            HeigthLabel.Visible = true;
+            HeigthTextBox.Visible = true;
+            
+            RadiusLabel.Visible = false;
+            RadiusTextBox.Visible = false;
+            
+            LengthLabel.Visible = false;
+            LengthTextBox.Visible = false;
+            
+            WidthTextBox.Visible = false;
+            WidthLabel.Visible = false;
             _figureType = TypesOfFigures.Triangle;
         }
 
@@ -43,9 +54,20 @@ namespace ModelForm
         /// <param name="e"></param>
         private void RectangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            TriangleGroupBox.Visible = false;
-            RectangleGroupBox.Visible = true;
-            CircleGroupBox.Visible = false;
+            MainsideLabel.Visible = false;
+            MainsideTextBox.Visible = false;
+            
+            HeigthLabel.Visible = false;
+            HeigthTextBox.Visible = false;
+            
+            RadiusLabel.Visible = false;
+            RadiusTextBox.Visible = false;
+            
+            LengthLabel.Visible = true;
+            LengthTextBox.Visible = true;
+            
+            WidthTextBox.Visible = true;
+            WidthLabel.Visible = true;
             _figureType = TypesOfFigures.Rectangle;
         }
 
@@ -56,9 +78,20 @@ namespace ModelForm
         /// <param name="e"></param>
         private void CircleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            TriangleGroupBox.Visible = false;
-            RectangleGroupBox.Visible = false;
-            CircleGroupBox.Visible = true;
+            MainsideLabel.Visible = false;
+            MainsideTextBox.Visible = false;
+            
+            HeigthLabel.Visible = false;
+            HeigthTextBox.Visible = false;
+            
+            RadiusLabel.Visible = true;
+            RadiusTextBox.Visible = true;
+            
+            LengthLabel.Visible = false;
+            LengthTextBox.Visible = false;
+            
+            WidthTextBox.Visible = false;
+            WidthLabel.Visible = false;
             _figureType = TypesOfFigures.Ring;
         }
 
@@ -86,20 +119,19 @@ namespace ModelForm
                     double mainside = Convert.ToDouble(MainsideTextBox.Text);
                     double heigth = Convert.ToDouble(HeigthTextBox.Text);
                     _figure = new Triangle(mainside, heigth);
-                    _figure.CalculatedArea();
-                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea());
+                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
                     break;
 
                 case TypesOfFigures.Rectangle:
                     double length = Convert.ToDouble(LengthTextBox.Text);
                     double width = Convert.ToDouble(WidthTextBox.Text);
                     _figure = new Rectangle(length, width);
-                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea());
+                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
                     break;
 
                 case TypesOfFigures.Ring:
                     _figure = new Circle(Convert.ToDouble(RadiusTextBox.Text));
-                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea());
+                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
                     break;
 
 

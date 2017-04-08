@@ -7,15 +7,13 @@ namespace ModelForm
 {
     public partial class MainForm : Form
     {
-        private BindingList<IFigure>  _figures = new BindingList<IFigure>();
+        private readonly BindingList<IFigure> _figures = new BindingList<IFigure>();
 
         public MainForm()
         {
             InitializeComponent();
             FiguresList.DataSource = _figures;
         }
-
-        public BindingList<IFigure> FigureList => _figures;
 
         /// <summary>
         /// Кнопка "Добавить фигуру"
@@ -30,8 +28,6 @@ namespace ModelForm
             {
                 _figures.Add(addFigure.FigureDataList);
             }
-            FiguresList.DataSource = null;
-            FiguresList.DataSource = _figures;
 
         }
 
@@ -42,5 +38,10 @@ namespace ModelForm
                 FiguresList.Rows.Remove(listRow);
             }
         }
-    }
+
+		private void toolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

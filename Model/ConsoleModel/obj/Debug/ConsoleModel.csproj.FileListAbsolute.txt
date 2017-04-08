@@ -14,3 +14,14 @@ C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\bin\Debug\Model.pdb
 C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\obj\Debug\ConsoleModel.csprojResolveAssemblyReference.cache
 C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\obj\Debug\ConsoleModel.exe
 C:\Users\iKalentii\Documents\GPO1307\Model\ConsoleModel\obj\Debug\ConsoleModel.pdb
+G:\Model\ConsoleModel\bin\Debug\ConsoleModel.exe.config
+G:\Model\ConsoleModel\obj\Debug\ConsoleModel.exe
+G:\Model\ConsoleModel\obj\Debug\ConsoleModel.pdb
+F:\Model\ConsoleModel\bin\Debug\ConsoleModel.exe.config
+F:\Model\ConsoleModel\obj\Debug\ConsoleModel.exe
+F:\Model\ConsoleModel\obj\Debug\ConsoleModel.pdb
+G:\Model\ConsoleModel\obj\Debug\ConsoleModel.csprojResolveAssemblyReference.cache
+G:\Model\ConsoleModel\bin\Debug\ConsoleModel.exe
+G:\Model\ConsoleModel\bin\Debug\ConsoleModel.pdb
+G:\Model\ConsoleModel\bin\Debug\Model.dll
+G:\Model\ConsoleModel\bin\Debug\Model.pdb

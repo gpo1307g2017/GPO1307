@@ -8,7 +8,7 @@ namespace Model
     public class Circle : IFigure
     {
         private double _radius;
-        
+
         /// <summary>
         /// Конструктор локального объявления радиуса
         /// </summary>
@@ -24,21 +24,21 @@ namespace Model
 
 
 
-
-
         /// <summary>
         /// Свойство площади круга
         /// </summary>
-        public double CalculatedArea() => (Math.Pow(_radius, 2) * Math.PI);
+        public double CalculatedArea => Math.Round((Math.Pow(_radius, 2) * Math.PI), 4);
 
         /// <summary>
         /// Метод вывода площади круга
         /// </summary>
         /// <param name="Площадь круга"></param>
-        public void ShowArea(double area)
+        public string ShowArea()
         {
-            Console.WriteLine("Площадь круга с радиусом " + _radius + " = " + area);
+            return Convert.ToString(Convert.ToString(CalculatedArea));
         }
+
+        public string TypeFigure => "Ring";
     }
 }
 
