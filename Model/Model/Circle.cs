@@ -38,6 +38,7 @@ namespace Model
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
 
+        private double radius => _radius;
         public string TypeFigure => "Ring";
     }
 }

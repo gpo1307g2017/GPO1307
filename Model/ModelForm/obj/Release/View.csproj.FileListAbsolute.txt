@@ -1,0 +1,12 @@
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Release\ModelForm.exe.config
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Release\ModelForm.exe
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Release\ModelForm.pdb
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Release\Model.dll
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Release\Model.pdb
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Release\View.csprojResolveAssemblyReference.cache
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Release\ModelForm.AddFigureForm.resources
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Release\ModelForm.MainForm.resources
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Release\ModelForm.Properties.Resources.resources
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Release\View.csproj.GenerateResource.Cache
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Release\ModelForm.exe
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Release\ModelForm.pdb

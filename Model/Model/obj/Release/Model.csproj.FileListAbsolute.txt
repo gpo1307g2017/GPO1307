@@ -1,0 +1,4 @@
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\bin\Release\Model.dll
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\bin\Release\Model.pdb
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\obj\Release\Model.dll
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\Model\obj\Release\Model.pdb

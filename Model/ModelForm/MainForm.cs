@@ -5,14 +5,21 @@ using Model;
 
 namespace ModelForm
 {
+
+
     public partial class MainForm : Form
     {
-        private readonly BindingList<IFigure> _figures = new BindingList<IFigure>();
+        private  BindingList<IFigure> _figures = new BindingList<IFigure>();
 
         public MainForm()
         {
             InitializeComponent();
             FiguresList.DataSource = _figures;
+
+#if DEBUG
+            GenterateRandomFigureButton.Visible = true;
+#endif
+
         }
 
         /// <summary>
@@ -43,5 +50,36 @@ namespace ModelForm
 		{
 
 		}
-	}
+
+        private void GenterateRandomFigureButton_Click(object sender, EventArgs e)
+        {
+#if DEBUG
+            var randomFigure = new Random();
+           
+                var figureType = randomFigure.Next(0, 3);
+                double EstimatedSideA;
+                double EstimatedSideB;
+                switch (figureType)
+                {
+                    case 0:
+                        var radius = randomFigure.NextDouble() * randomFigure.Next(1, 11);
+                        _figures.Add(new Circle(radius));
+                        break;
+                    case 1:
+                    EstimatedSideA = randomFigure.NextDouble() * randomFigure.Next(1, 11);
+                    EstimatedSideB = randomFigure.NextDouble() * randomFigure.Next(1, 11);
+                        _figures.Add(new Rectangle(EstimatedSideA, EstimatedSideB));
+                        break;
+                    case 2:
+                    EstimatedSideA = randomFigure.NextDouble() * randomFigure.Next(1, 11);
+                    EstimatedSideB = randomFigure.NextDouble() * randomFigure.Next(1, 11);
+                    _figures.Add(new Triangle(EstimatedSideA, EstimatedSideB));
+                        break;
+                }
+
+            FiguresList.DataSource = null;
+            FiguresList.DataSource = _figures;
+#endif
+        }
+    }
 }

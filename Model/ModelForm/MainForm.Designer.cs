@@ -37,6 +37,7 @@
             this.AddFigureButton = new System.Windows.Forms.Button();
             this.RemoveFigureButton = new System.Windows.Forms.Button();
             this.FindFigureButton = new System.Windows.Forms.Button();
+            this.GenterateRandomFigureButton = new System.Windows.Forms.Button();
             this.FileToolStrip.SuspendLayout();
             this.FiguresGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FiguresList)).BeginInit();
@@ -118,11 +119,22 @@
             this.FindFigureButton.Text = "Find Figure";
             this.FindFigureButton.UseVisualStyleBackColor = true;
             // 
+            // GenterateRandomFigureButton
+            // 
+            this.GenterateRandomFigureButton.Location = new System.Drawing.Point(114, 216);
+            this.GenterateRandomFigureButton.Name = "GenterateRandomFigureButton";
+            this.GenterateRandomFigureButton.Size = new System.Drawing.Size(93, 23);
+            this.GenterateRandomFigureButton.TabIndex = 5;
+            this.GenterateRandomFigureButton.Text = "RandomFigure";
+            this.GenterateRandomFigureButton.UseVisualStyleBackColor = true;
+            this.GenterateRandomFigureButton.Click += new System.EventHandler(this.GenterateRandomFigureButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 261);
+            this.Controls.Add(this.GenterateRandomFigureButton);
             this.Controls.Add(this.FindFigureButton);
             this.Controls.Add(this.RemoveFigureButton);
             this.Controls.Add(this.AddFigureButton);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button FindFigureButton;
 		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-	}
+        private System.Windows.Forms.Button GenterateRandomFigureButton;
+    }
 }
