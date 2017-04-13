@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.FileToolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FiguresGroupBox = new System.Windows.Forms.GroupBox();
             this.FiguresList = new System.Windows.Forms.DataGridView();
             this.AddFigureButton = new System.Windows.Forms.Button();
             this.RemoveFigureButton = new System.Windows.Forms.Button();
             this.FindFigureButton = new System.Windows.Forms.Button();
             this.GenterateRandomFigureButton = new System.Windows.Forms.Button();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.FileToolStrip.SuspendLayout();
             this.FiguresGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FiguresList)).BeginInit();
@@ -53,75 +53,9 @@
             this.toolStripDropDownButton1});
             this.FileToolStrip.Location = new System.Drawing.Point(0, 0);
             this.FileToolStrip.Name = "FileToolStrip";
-            this.FileToolStrip.Size = new System.Drawing.Size(479, 27);
+            this.FileToolStrip.Size = new System.Drawing.Size(359, 25);
             this.FileToolStrip.TabIndex = 0;
             this.FileToolStrip.Text = "File";
-            // 
-            // FiguresGroupBox
-            // 
-            this.FiguresGroupBox.Controls.Add(this.FiguresList);
-            this.FiguresGroupBox.Location = new System.Drawing.Point(16, 34);
-            this.FiguresGroupBox.Margin = new System.Windows.Forms.Padding(4);
-            this.FiguresGroupBox.Name = "FiguresGroupBox";
-            this.FiguresGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.FiguresGroupBox.Size = new System.Drawing.Size(447, 187);
-            this.FiguresGroupBox.TabIndex = 1;
-            this.FiguresGroupBox.TabStop = false;
-            this.FiguresGroupBox.Text = "Figures";
-            // 
-            // FiguresList
-            // 
-            this.FiguresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FiguresList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FiguresList.Location = new System.Drawing.Point(4, 19);
-            this.FiguresList.Margin = new System.Windows.Forms.Padding(4);
-            this.FiguresList.Name = "FiguresList";
-            this.FiguresList.Size = new System.Drawing.Size(439, 164);
-            this.FiguresList.TabIndex = 0;
-            // 
-            // AddFigureButton
-            // 
-            this.AddFigureButton.Location = new System.Drawing.Point(20, 230);
-            this.AddFigureButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AddFigureButton.Name = "AddFigureButton";
-            this.AddFigureButton.Size = new System.Drawing.Size(124, 28);
-            this.AddFigureButton.TabIndex = 2;
-            this.AddFigureButton.Text = "Add Figure";
-            this.AddFigureButton.UseVisualStyleBackColor = true;
-            this.AddFigureButton.Click += new System.EventHandler(this.AddFigureButton_Click);
-            // 
-            // RemoveFigureButton
-            // 
-            this.RemoveFigureButton.Location = new System.Drawing.Point(20, 266);
-            this.RemoveFigureButton.Margin = new System.Windows.Forms.Padding(4);
-            this.RemoveFigureButton.Name = "RemoveFigureButton";
-            this.RemoveFigureButton.Size = new System.Drawing.Size(124, 28);
-            this.RemoveFigureButton.TabIndex = 3;
-            this.RemoveFigureButton.Text = "Remove Figure";
-            this.RemoveFigureButton.UseVisualStyleBackColor = true;
-            this.RemoveFigureButton.Click += new System.EventHandler(this.RemoveFigureButton_Click);
-            // 
-            // FindFigureButton
-            // 
-            this.FindFigureButton.Location = new System.Drawing.Point(152, 230);
-            this.FindFigureButton.Margin = new System.Windows.Forms.Padding(4);
-            this.FindFigureButton.Name = "FindFigureButton";
-            this.FindFigureButton.Size = new System.Drawing.Size(124, 28);
-            this.FindFigureButton.TabIndex = 4;
-            this.FindFigureButton.Text = "Find Figure";
-            this.FindFigureButton.UseVisualStyleBackColor = true;
-            // 
-            // GenterateRandomFigureButton
-            // 
-            this.GenterateRandomFigureButton.Location = new System.Drawing.Point(152, 266);
-            this.GenterateRandomFigureButton.Margin = new System.Windows.Forms.Padding(4);
-            this.GenterateRandomFigureButton.Name = "GenterateRandomFigureButton";
-            this.GenterateRandomFigureButton.Size = new System.Drawing.Size(124, 28);
-            this.GenterateRandomFigureButton.TabIndex = 5;
-            this.GenterateRandomFigureButton.Text = "RandomFigure";
-            this.GenterateRandomFigureButton.UseVisualStyleBackColor = true;
-            this.GenterateRandomFigureButton.Visible = false;
-            this.GenterateRandomFigureButton.Click += new System.EventHandler(this.GenterateRandomFigureButton_Click);
             // 
             // toolStripDropDownButton1
             // 
@@ -132,37 +66,96 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(46, 24);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(38, 22);
             this.toolStripDropDownButton1.Text = "File";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
-            // openFileDialog1
+            // FiguresGroupBox
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.FiguresGroupBox.Controls.Add(this.FiguresList);
+            this.FiguresGroupBox.Location = new System.Drawing.Point(12, 28);
+            this.FiguresGroupBox.Name = "FiguresGroupBox";
+            this.FiguresGroupBox.Size = new System.Drawing.Size(335, 152);
+            this.FiguresGroupBox.TabIndex = 1;
+            this.FiguresGroupBox.TabStop = false;
+            this.FiguresGroupBox.Text = "Figures";
+            // 
+            // FiguresList
+            // 
+            this.FiguresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FiguresList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FiguresList.Location = new System.Drawing.Point(3, 16);
+            this.FiguresList.Name = "FiguresList";
+            this.FiguresList.Size = new System.Drawing.Size(329, 133);
+            this.FiguresList.TabIndex = 0;
+            // 
+            // AddFigureButton
+            // 
+            this.AddFigureButton.Location = new System.Drawing.Point(15, 187);
+            this.AddFigureButton.Name = "AddFigureButton";
+            this.AddFigureButton.Size = new System.Drawing.Size(93, 23);
+            this.AddFigureButton.TabIndex = 2;
+            this.AddFigureButton.Text = "Add Figure";
+            this.AddFigureButton.UseVisualStyleBackColor = true;
+            this.AddFigureButton.Click += new System.EventHandler(this.AddFigureButton_Click);
+            // 
+            // RemoveFigureButton
+            // 
+            this.RemoveFigureButton.Location = new System.Drawing.Point(15, 216);
+            this.RemoveFigureButton.Name = "RemoveFigureButton";
+            this.RemoveFigureButton.Size = new System.Drawing.Size(93, 23);
+            this.RemoveFigureButton.TabIndex = 3;
+            this.RemoveFigureButton.Text = "Remove Figure";
+            this.RemoveFigureButton.UseVisualStyleBackColor = true;
+            this.RemoveFigureButton.Click += new System.EventHandler(this.RemoveFigureButton_Click);
+            // 
+            // FindFigureButton
+            // 
+            this.FindFigureButton.Location = new System.Drawing.Point(114, 187);
+            this.FindFigureButton.Name = "FindFigureButton";
+            this.FindFigureButton.Size = new System.Drawing.Size(93, 23);
+            this.FindFigureButton.TabIndex = 4;
+            this.FindFigureButton.Text = "Find Figure";
+            this.FindFigureButton.UseVisualStyleBackColor = true;
+            // 
+            // GenterateRandomFigureButton
+            // 
+            this.GenterateRandomFigureButton.Location = new System.Drawing.Point(114, 216);
+            this.GenterateRandomFigureButton.Name = "GenterateRandomFigureButton";
+            this.GenterateRandomFigureButton.Size = new System.Drawing.Size(93, 23);
+            this.GenterateRandomFigureButton.TabIndex = 5;
+            this.GenterateRandomFigureButton.Text = "RandomFigure";
+            this.GenterateRandomFigureButton.UseVisualStyleBackColor = true;
+            this.GenterateRandomFigureButton.Visible = false;
+            this.GenterateRandomFigureButton.Click += new System.EventHandler(this.GenterateRandomFigureButton_Click);
+            // 
+            // OpenFileDialog
+            // 
+            this.OpenFileDialog.FileName = "openFileDialog1";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 321);
+            this.ClientSize = new System.Drawing.Size(359, 261);
             this.Controls.Add(this.GenterateRandomFigureButton);
             this.Controls.Add(this.FindFigureButton);
             this.Controls.Add(this.RemoveFigureButton);
             this.Controls.Add(this.AddFigureButton);
             this.Controls.Add(this.FiguresGroupBox);
             this.Controls.Add(this.FileToolStrip);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.FileToolStrip.ResumeLayout(false);
@@ -186,7 +179,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog SaveFileDialog;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog;
     }
 }

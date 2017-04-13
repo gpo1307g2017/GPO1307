@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
+using System.IO;
+using System.Runtime.Serialization;
 using System.Windows.Forms;
+using System.Xml;
 using Model;
 
 namespace ModelForm
@@ -9,7 +12,7 @@ namespace ModelForm
 
     public partial class MainForm : Form
     {
-        private  BindingList<IFigure> _figures = new BindingList<IFigure>();
+        private BindingList<IFigure> _figures = new BindingList<IFigure>();
 
         public MainForm()
         {
@@ -29,7 +32,7 @@ namespace ModelForm
         /// <param name="e"></param>
         private void AddFigureButton_Click(object sender, EventArgs e)
         {
-            var addFigure = new AddFigureForm { Owner = this };
+            var addFigure = new AddFigureForm {Owner = this};
             addFigure.ShowDialog();
             if (addFigure.FigureData != null)
             {
@@ -46,40 +49,77 @@ namespace ModelForm
             }
         }
 
-		private void toolStripMenuItem1_Click(object sender, EventArgs e)
-		{
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
 
-		}
+        }
 
         private void GenterateRandomFigureButton_Click(object sender, EventArgs e)
         {
 #if DEBUG
             var randomFigure = new Random();
-           
-                var figureType = randomFigure.Next(0, 3);
-                double EstimatedSideA;
-                double EstimatedSideB;
-                switch (figureType)
-                {
-                    case 0:
-                        var radius = randomFigure.NextDouble() * randomFigure.Next(1, 11);
-                        _figures.Add(new Circle(radius));
-                        break;
-                    case 1:
+
+            var figureType = randomFigure.Next(0, 3);
+            double EstimatedSideA;
+            double EstimatedSideB;
+            switch (figureType)
+            {
+                case 0:
+                    var radius = randomFigure.NextDouble() * randomFigure.Next(1, 11);
+                    _figures.Add(new Circle(radius));
+                    break;
+                case 1:
                     EstimatedSideA = randomFigure.NextDouble() * randomFigure.Next(1, 11);
                     EstimatedSideB = randomFigure.NextDouble() * randomFigure.Next(1, 11);
-                        _figures.Add(new Rectangle(EstimatedSideA, EstimatedSideB));
-                        break;
-                    case 2:
+                    _figures.Add(new Rectangle(EstimatedSideA, EstimatedSideB));
+                    break;
+                case 2:
                     EstimatedSideA = randomFigure.NextDouble() * randomFigure.Next(1, 11);
                     EstimatedSideB = randomFigure.NextDouble() * randomFigure.Next(1, 11);
                     _figures.Add(new Triangle(EstimatedSideA, EstimatedSideB));
-                        break;
-                }
+                    break;
+            }
 
             FiguresList.DataSource = null;
             FiguresList.DataSource = _figures;
 #endif
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string _filePath = null;
+
+            Stream myStream;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            //_filePath = "@C:\Users\neshc\Desktop\GitHub";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    // Code to write the stream goes here.
+                    myStream.Close();
+                }
+            }
+
+            //DataContractSerializer dcs = new DataContractSerializer(typeof(MainForm));
+            //XmlDictionaryWriter xdw = XmlDictionaryWriter.CreateTextWriter(_figures);
+
+            var writer = new System.Xml.Serialization.XmlSerializer(typeof(MainForm));
+
+           using (var file = File.Create(_filePath))
+            {
+
+                writer.Serialize(file, _figures);
+
+                file.Close();
+            }
+        }
+
     }
 }
