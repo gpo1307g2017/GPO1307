@@ -34,3 +34,27 @@ G:\Model\ModelForm\obj\Debug\ModelForm.AddFigureForm.resources
 G:\Model\ModelForm\obj\Debug\ModelForm.MainForm.resources
 G:\Model\ModelForm\obj\Debug\ModelForm.Properties.Resources.resources
 G:\Model\ModelForm\obj\Debug\View.csproj.GenerateResource.Cache
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\bin\Debug\ModelForm.exe.config
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\bin\Debug\ModelForm.exe
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\bin\Debug\ModelForm.pdb
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\bin\Debug\Model.dll
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\bin\Debug\Model.pdb
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\obj\Debug\View.csprojResolveAssemblyReference.cache
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\obj\Debug\ModelForm.AddFigureForm.resources
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\obj\Debug\ModelForm.MainForm.resources
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\obj\Debug\ModelForm.Properties.Resources.resources
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\obj\Debug\View.csproj.GenerateResource.Cache
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\obj\Debug\ModelForm.exe
+C:\Users\neshc\Desktop\Новая папка\Model\ModelForm\obj\Debug\ModelForm.pdb
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\bin\Debug\ModelForm.exe.config
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\bin\Debug\ModelForm.exe
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\bin\Debug\ModelForm.pdb
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\bin\Debug\Model.dll
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\bin\Debug\Model.pdb
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\View.csprojResolveAssemblyReference.cache
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.AddFigureForm.resources
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.MainForm.resources
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.Properties.Resources.resources
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\View.csproj.GenerateResource.Cache
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.exe
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.pdb

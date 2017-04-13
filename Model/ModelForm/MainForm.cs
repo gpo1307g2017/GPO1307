@@ -31,9 +31,9 @@ namespace ModelForm
         {
             var addFigure = new AddFigureForm { Owner = this };
             addFigure.ShowDialog();
-            if (addFigure.FigureDataList != null)
+            if (addFigure.FigureData != null)
             {
-                _figures.Add(addFigure.FigureDataList);
+                _figures.Add(addFigure.FigureData);
             }
 
         }

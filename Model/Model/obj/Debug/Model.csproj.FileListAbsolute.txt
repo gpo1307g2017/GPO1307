@@ -23,3 +23,13 @@ G:\Model\Model\obj\Debug\Model.dll
 G:\Model\Model\obj\Debug\Model.pdb
 G:\Model\Model\bin\Debug\Model.dll
 G:\Model\Model\bin\Debug\Model.pdb
+C:\Users\neshc\Desktop\Новая папка\Model\Model\bin\Debug\Model.dll
+C:\Users\neshc\Desktop\Новая папка\Model\Model\bin\Debug\Model.pdb
+C:\Users\neshc\Desktop\Новая папка\Model\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\neshc\Desktop\Новая папка\Model\Model\obj\Debug\Model.dll
+C:\Users\neshc\Desktop\Новая папка\Model\Model\obj\Debug\Model.pdb
+C:\Users\neshc\Desktop\GitHub\Model\Model\bin\Debug\Model.dll
+C:\Users\neshc\Desktop\GitHub\Model\Model\bin\Debug\Model.pdb
+C:\Users\neshc\Desktop\GitHub\Model\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\neshc\Desktop\GitHub\Model\Model\obj\Debug\Model.dll
+C:\Users\neshc\Desktop\GitHub\Model\Model\obj\Debug\Model.pdb

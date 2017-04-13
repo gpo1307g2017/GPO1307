@@ -20,7 +20,7 @@ namespace ModelForm
         }
 
         private IFigure _figure;
-        public IFigure FigureDataList => _figure;
+        public IFigure FigureData => _figure;
 
         /// <summary>
         /// Радио-кнопка "Треугольник"
@@ -29,7 +29,8 @@ namespace ModelForm
         /// <param name="e"></param>
         private void TriangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            // MainsideLabel.Visible = TriangleGroupBox.SelectedIndex == 0;
+            ChoseFigureLabel.Visible = false;
+
             MainsideLabel.Visible = true;
             MainsideTextBox.Visible = true;
 
@@ -54,6 +55,8 @@ namespace ModelForm
         /// <param name="e"></param>
         private void RectangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            ChoseFigureLabel.Visible = false;
+
             MainsideLabel.Visible = false;
             MainsideTextBox.Visible = false;
             
@@ -78,6 +81,8 @@ namespace ModelForm
         /// <param name="e"></param>
         private void CircleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            ChoseFigureLabel.Visible = false;
+
             MainsideLabel.Visible = false;
             MainsideTextBox.Visible = false;
             
@@ -102,7 +107,14 @@ namespace ModelForm
         /// <param name="e"></param>
         private void OKButton_Click(object sender, EventArgs e)
         {
-            Close();
+            if (FigureAreaTextBox.Text == "")
+            {
+                MessageBox.Show("Расчитайте площадь, только потом нажимайте кнопку \"OK \" ");
+            }
+            else
+            {
+                Close();
+            }
         }
         
 
