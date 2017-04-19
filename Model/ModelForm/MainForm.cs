@@ -92,7 +92,7 @@ namespace ModelForm
             string _filePath = null;
 
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "txt files (*.txt)|*.txt";
+            sfd.Filter = "dat files (*.dat)|*.dat";
             sfd.FilterIndex = 1;
             sfd.RestoreDirectory = true;
             sfd.ShowDialog();
