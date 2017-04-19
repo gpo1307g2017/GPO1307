@@ -91,23 +91,37 @@ namespace ModelForm
         {
             string _filePath = null;
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
-            saveFileDialog.FilterIndex = 2;
-            saveFileDialog.RestoreDirectory = true;
-            saveFileDialog.ShowDialog();
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "txt files (*.txt)|*.txt";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+            sfd.ShowDialog();
 
-
-            BinaryFormatter formatter = new BinaryFormatter();
-
-            using (FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
+            if (sfd.FileName != "")
             {
-                formatter.Serialize(fileStream, _figures);
-            }
+                BinaryFormatter formatter = new BinaryFormatter();
 
-
-            
+                using (FileStream fileStream = new FileStream(sfd.FileName, FileMode.OpenOrCreate))
+                {
+                    formatter.Serialize(fileStream, _figures);
+                }
+            }         
         }
 
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+
+            if (ofd.FileName != "")
+            {
+                using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
+                {
+                    BindingList<IFigure> deserializeFigures = (BindingList<IFigure>)formatter.Deserialize(fileStream);
+                    FiguresList.DataSource = deserializeFigures;
+                }
+            }
+        }
     }
 }
