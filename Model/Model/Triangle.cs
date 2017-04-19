@@ -5,6 +5,7 @@ namespace Model
     /// <summary>
     /// Треугольник
     /// </summary>
+    [Serializable]
     public class Triangle : IFigure
     {
 

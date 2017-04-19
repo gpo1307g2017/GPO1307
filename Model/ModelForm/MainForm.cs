@@ -5,13 +5,15 @@ using System.Runtime.Serialization;
 using System.Windows.Forms;
 using System.Xml;
 using Model;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ModelForm
 {
 
-
+    //[Serializable]
     public partial class MainForm : Form
     {
+        
         private BindingList<IFigure> _figures = new BindingList<IFigure>();
 
         public MainForm()
@@ -89,36 +91,22 @@ namespace ModelForm
         {
             string _filePath = null;
 
-            Stream myStream;
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog.FilterIndex = 2;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.ShowDialog();
 
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
 
-            //_filePath = "@C:\Users\neshc\Desktop\GitHub";
+            BinaryFormatter formatter = new BinaryFormatter();
 
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            using (FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
             {
-                if ((myStream = saveFileDialog1.OpenFile()) != null)
-                {
-                    // Code to write the stream goes here.
-                    myStream.Close();
-                }
+                formatter.Serialize(fileStream, _figures);
             }
 
-            //DataContractSerializer dcs = new DataContractSerializer(typeof(MainForm));
-            //XmlDictionaryWriter xdw = XmlDictionaryWriter.CreateTextWriter(_figures);
 
-            var writer = new System.Xml.Serialization.XmlSerializer(typeof(MainForm));
-
-           using (var file = File.Create(_filePath))
-            {
-
-                writer.Serialize(file, _figures);
-
-                file.Close();
-            }
+            
         }
 
     }

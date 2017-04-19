@@ -5,6 +5,7 @@ namespace Model
     /// <summary>
     /// Круг
     /// </summary>
+    [Serializable]
     public class Circle : IFigure
     {
         private double _radius;
