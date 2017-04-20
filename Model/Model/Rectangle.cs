@@ -5,6 +5,7 @@ namespace Model
     /// <summary>
     /// Прямоугольник
     /// </summary>
+    [Serializable]
     public class Rectangle : IFigure
     {
 
