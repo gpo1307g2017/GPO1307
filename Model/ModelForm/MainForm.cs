@@ -89,39 +89,80 @@ namespace ModelForm
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string _filePath = null;
-
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "dat files (*.dat)|*.dat";
-            sfd.FilterIndex = 1;
-            sfd.RestoreDirectory = true;
-            sfd.ShowDialog();
-
-            if (sfd.FileName != "")
+            if (FiguresList.RowCount == 0)
             {
-                BinaryFormatter formatter = new BinaryFormatter();
+                MessageBox.Show("You can not save a list without items");
+            }
+            else
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "dat files (*.dat)|*.dat";
+                sfd.FilterIndex = 1;
+                sfd.RestoreDirectory = true;
+                sfd.ShowDialog();
 
-                using (FileStream fileStream = new FileStream(sfd.FileName, FileMode.OpenOrCreate))
+                if (sfd.FileName != "")
                 {
-                    formatter.Serialize(fileStream, _figures);
+                    BinaryFormatter formatter = new BinaryFormatter();
+
+                    using (FileStream fileStream = new FileStream(sfd.FileName, FileMode.OpenOrCreate))
+                    {
+                        formatter.Serialize(fileStream, _figures);
+                    }
                 }
-            }         
+            }
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BinaryFormatter formatter = new BinaryFormatter();
+           BinaryFormatter formatter = new BinaryFormatter();
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.ShowDialog();
 
-            if (ofd.FileName != "")
+            if (FiguresList.RowCount != 0)
             {
-                using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
+                const string message = "You have unsaved data left. Do you want to save them before opening other data?";
+                const string caption = "Save before open";
+                var messageResult = MessageBox.Show(message, caption,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (messageResult == DialogResult.Yes)
                 {
-                    BindingList<IFigure> deserializeFigures = (BindingList<IFigure>)formatter.Deserialize(fileStream);
-                    FiguresList.DataSource = deserializeFigures;
+                    saveToolStripMenuItem_Click(sender,e);
+                    ofd.ShowDialog();
+                }
+
+                if (messageResult == DialogResult.No)
+                {
+                    ofd.ShowDialog();
+
+                    if (ofd.FileName != "")
+                    {
+                        using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
+                        {
+                            BindingList<IFigure> deserializeFigures =
+                                (BindingList<IFigure>) formatter.Deserialize(fileStream);
+                            FiguresList.DataSource = deserializeFigures;
+                        }
+                    }
                 }
             }
+            else
+            {
+                ofd.ShowDialog();
+
+                if (ofd.FileName != "")
+                {
+                    using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
+                    {
+                        BindingList<IFigure> deserializeFigures =
+                            (BindingList<IFigure>)formatter.Deserialize(fileStream);
+                        FiguresList.DataSource = deserializeFigures;
+                    }
+                }
+            }
+
+            
         }
     }
 }

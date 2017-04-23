@@ -53,7 +53,7 @@
             this.toolStripDropDownButton1});
             this.FileToolStrip.Location = new System.Drawing.Point(0, 0);
             this.FileToolStrip.Name = "FileToolStrip";
-            this.FileToolStrip.Size = new System.Drawing.Size(359, 25);
+            this.FileToolStrip.Size = new System.Drawing.Size(378, 25);
             this.FileToolStrip.TabIndex = 0;
             this.FileToolStrip.Text = "File";
             // 
@@ -72,23 +72,23 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // FiguresGroupBox
             // 
             this.FiguresGroupBox.Controls.Add(this.FiguresList);
-            this.FiguresGroupBox.Location = new System.Drawing.Point(12, 28);
+            this.FiguresGroupBox.Location = new System.Drawing.Point(114, 28);
             this.FiguresGroupBox.Name = "FiguresGroupBox";
-            this.FiguresGroupBox.Size = new System.Drawing.Size(335, 152);
+            this.FiguresGroupBox.Size = new System.Drawing.Size(250, 307);
             this.FiguresGroupBox.TabIndex = 1;
             this.FiguresGroupBox.TabStop = false;
             this.FiguresGroupBox.Text = "Figures";
@@ -99,12 +99,12 @@
             this.FiguresList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FiguresList.Location = new System.Drawing.Point(3, 16);
             this.FiguresList.Name = "FiguresList";
-            this.FiguresList.Size = new System.Drawing.Size(329, 133);
+            this.FiguresList.Size = new System.Drawing.Size(244, 288);
             this.FiguresList.TabIndex = 0;
             // 
             // AddFigureButton
             // 
-            this.AddFigureButton.Location = new System.Drawing.Point(15, 187);
+            this.AddFigureButton.Location = new System.Drawing.Point(12, 28);
             this.AddFigureButton.Name = "AddFigureButton";
             this.AddFigureButton.Size = new System.Drawing.Size(93, 23);
             this.AddFigureButton.TabIndex = 2;
@@ -114,7 +114,7 @@
             // 
             // RemoveFigureButton
             // 
-            this.RemoveFigureButton.Location = new System.Drawing.Point(15, 216);
+            this.RemoveFigureButton.Location = new System.Drawing.Point(12, 57);
             this.RemoveFigureButton.Name = "RemoveFigureButton";
             this.RemoveFigureButton.Size = new System.Drawing.Size(93, 23);
             this.RemoveFigureButton.TabIndex = 3;
@@ -124,7 +124,7 @@
             // 
             // FindFigureButton
             // 
-            this.FindFigureButton.Location = new System.Drawing.Point(114, 187);
+            this.FindFigureButton.Location = new System.Drawing.Point(12, 86);
             this.FindFigureButton.Name = "FindFigureButton";
             this.FindFigureButton.Size = new System.Drawing.Size(93, 23);
             this.FindFigureButton.TabIndex = 4;
@@ -133,7 +133,7 @@
             // 
             // GenterateRandomFigureButton
             // 
-            this.GenterateRandomFigureButton.Location = new System.Drawing.Point(114, 216);
+            this.GenterateRandomFigureButton.Location = new System.Drawing.Point(12, 115);
             this.GenterateRandomFigureButton.Name = "GenterateRandomFigureButton";
             this.GenterateRandomFigureButton.Size = new System.Drawing.Size(93, 23);
             this.GenterateRandomFigureButton.TabIndex = 5;
@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 261);
+            this.ClientSize = new System.Drawing.Size(378, 347);
             this.Controls.Add(this.GenterateRandomFigureButton);
             this.Controls.Add(this.FindFigureButton);
             this.Controls.Add(this.RemoveFigureButton);
