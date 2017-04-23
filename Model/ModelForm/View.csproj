@@ -53,6 +53,12 @@
     <Compile Include="AddFigureForm.Designer.cs">
       <DependentUpon>AddFigureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindElementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindElementsForm.Designer.cs">
+      <DependentUpon>FindElementsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddFigureForm.resx">
       <DependentUpon>AddFigureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindElementsForm.resx">
+      <DependentUpon>FindElementsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

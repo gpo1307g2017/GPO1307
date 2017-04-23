@@ -1,16 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Windows.Forms;
-using System.Xml;
 using Model;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ModelForm
 {
-
-    //[Serializable]
     public partial class MainForm : Form
     {
         
@@ -50,12 +46,7 @@ namespace ModelForm
                 FiguresList.Rows.Remove(listRow);
             }
         }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void GenterateRandomFigureButton_Click(object sender, EventArgs e)
         {
 #if DEBUG
