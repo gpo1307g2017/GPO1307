@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.FindingFigureList = new System.Windows.Forms.DataGridView();
             this.FingingFiguresGroupBox = new System.Windows.Forms.GroupBox();
+            this.FindButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FindingFigureList)).BeginInit();
             this.FingingFiguresGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -110,7 +112,7 @@
             this.FindingFigureList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FindingFigureList.Location = new System.Drawing.Point(3, 16);
             this.FindingFigureList.Name = "FindingFigureList";
-            this.FindingFigureList.Size = new System.Drawing.Size(242, 433);
+            this.FindingFigureList.Size = new System.Drawing.Size(242, 387);
             this.FindingFigureList.TabIndex = 7;
             // 
             // FingingFiguresGroupBox
@@ -118,16 +120,37 @@
             this.FingingFiguresGroupBox.Controls.Add(this.FindingFigureList);
             this.FingingFiguresGroupBox.Location = new System.Drawing.Point(236, 12);
             this.FingingFiguresGroupBox.Name = "FingingFiguresGroupBox";
-            this.FingingFiguresGroupBox.Size = new System.Drawing.Size(248, 452);
+            this.FingingFiguresGroupBox.Size = new System.Drawing.Size(248, 406);
             this.FingingFiguresGroupBox.TabIndex = 8;
             this.FingingFiguresGroupBox.TabStop = false;
             this.FingingFiguresGroupBox.Text = "Finging Figures";
+            // 
+            // FindButton
+            // 
+            this.FindButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FindButton.Location = new System.Drawing.Point(42, 189);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(116, 49);
+            this.FindButton.TabIndex = 8;
+            this.FindButton.Text = "Find";
+            this.FindButton.UseVisualStyleBackColor = true;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Location = new System.Drawing.Point(397, 424);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(84, 40);
+            this.CloseButton.TabIndex = 9;
+            this.CloseButton.Text = "Cansel";
+            this.CloseButton.UseVisualStyleBackColor = true;
             // 
             // FindElementsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 476);
+            this.Controls.Add(this.FindButton);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.FingingFiguresGroupBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ToAreaValueTextBox);
@@ -156,5 +179,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView FindingFigureList;
         private System.Windows.Forms.GroupBox FingingFiguresGroupBox;
+        private System.Windows.Forms.Button FindButton;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

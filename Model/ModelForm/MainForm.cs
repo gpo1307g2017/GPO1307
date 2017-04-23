@@ -152,8 +152,39 @@ namespace ModelForm
                     }
                 }
             }
+        }
 
-            
+        private void FindFigureButton_Click(object sender, EventArgs e)
+        {
+            var fingingFigure = new FindElementsForm(_figures) {Owner = this};
+            fingingFigure.ShowDialog();
+        }
+
+        private void ExinButton_Click(object sender, EventArgs e)
+        {
+            if (FiguresList.RowCount != 0)
+            {
+                const string message = "You have unsaved data left. Do you want to save them before closing program?";
+                const string caption = "Save before close";
+                var messageResult = MessageBox.Show(message, caption,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (messageResult == DialogResult.Yes)
+                {
+                    saveToolStripMenuItem_Click(sender, e);
+                    Close();
+                }
+
+                if (messageResult == DialogResult.No)
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                Close();
+            }
         }
     }
 }

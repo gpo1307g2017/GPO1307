@@ -58,3 +58,4 @@ C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.Properties.Res
 C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\View.csproj.GenerateResource.Cache
 C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.exe
 C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.pdb
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.FindElementsForm.resources

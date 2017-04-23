@@ -41,6 +41,7 @@
             this.GenterateRandomFigureButton = new System.Windows.Forms.Button();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.ExinButton = new System.Windows.Forms.Button();
             this.FileToolStrip.SuspendLayout();
             this.FiguresGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FiguresList)).BeginInit();
@@ -130,6 +131,7 @@
             this.FindFigureButton.TabIndex = 4;
             this.FindFigureButton.Text = "Find Figure";
             this.FindFigureButton.UseVisualStyleBackColor = true;
+            this.FindFigureButton.Click += new System.EventHandler(this.FindFigureButton_Click);
             // 
             // GenterateRandomFigureButton
             // 
@@ -146,11 +148,23 @@
             // 
             this.OpenFileDialog.FileName = "openFileDialog1";
             // 
+            // ExinButton
+            // 
+            this.ExinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExinButton.Location = new System.Drawing.Point(12, 296);
+            this.ExinButton.Name = "ExinButton";
+            this.ExinButton.Size = new System.Drawing.Size(93, 39);
+            this.ExinButton.TabIndex = 6;
+            this.ExinButton.Text = "Exit";
+            this.ExinButton.UseVisualStyleBackColor = true;
+            this.ExinButton.Click += new System.EventHandler(this.ExinButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 347);
+            this.Controls.Add(this.ExinButton);
             this.Controls.Add(this.GenterateRandomFigureButton);
             this.Controls.Add(this.FindFigureButton);
             this.Controls.Add(this.RemoveFigureButton);
@@ -182,5 +196,6 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog SaveFileDialog;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog;
+        private System.Windows.Forms.Button ExinButton;
     }
 }
