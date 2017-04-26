@@ -59,3 +59,4 @@ C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\View.csproj.GenerateReso
 C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.exe
 C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.pdb
 C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.FindElementsForm.resources
+C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.FindElementsForm.resources

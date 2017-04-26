@@ -54,7 +54,7 @@
             this.toolStripDropDownButton1});
             this.FileToolStrip.Location = new System.Drawing.Point(0, 0);
             this.FileToolStrip.Name = "FileToolStrip";
-            this.FileToolStrip.Size = new System.Drawing.Size(378, 25);
+            this.FileToolStrip.Size = new System.Drawing.Size(396, 25);
             this.FileToolStrip.TabIndex = 0;
             this.FileToolStrip.Text = "File";
             // 
@@ -89,7 +89,7 @@
             this.FiguresGroupBox.Controls.Add(this.FiguresList);
             this.FiguresGroupBox.Location = new System.Drawing.Point(114, 28);
             this.FiguresGroupBox.Name = "FiguresGroupBox";
-            this.FiguresGroupBox.Size = new System.Drawing.Size(250, 307);
+            this.FiguresGroupBox.Size = new System.Drawing.Size(270, 307);
             this.FiguresGroupBox.TabIndex = 1;
             this.FiguresGroupBox.TabStop = false;
             this.FiguresGroupBox.Text = "Figures";
@@ -100,7 +100,7 @@
             this.FiguresList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FiguresList.Location = new System.Drawing.Point(3, 16);
             this.FiguresList.Name = "FiguresList";
-            this.FiguresList.Size = new System.Drawing.Size(244, 288);
+            this.FiguresList.Size = new System.Drawing.Size(264, 288);
             this.FiguresList.TabIndex = 0;
             // 
             // AddFigureButton
@@ -163,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 347);
+            this.ClientSize = new System.Drawing.Size(396, 347);
             this.Controls.Add(this.ExinButton);
             this.Controls.Add(this.GenterateRandomFigureButton);
             this.Controls.Add(this.FindFigureButton);

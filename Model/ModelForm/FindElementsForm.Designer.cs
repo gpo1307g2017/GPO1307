@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TriangleCheckBox = new System.Windows.Forms.CheckBox();
-            this.RectandleCheckBox = new System.Windows.Forms.CheckBox();
-            this.CircleChekBox = new System.Windows.Forms.CheckBox();
             this.AreaRangeLabel = new System.Windows.Forms.Label();
             this.FromAreaValueTextBox = new System.Windows.Forms.TextBox();
             this.ToAreaValueTextBox = new System.Windows.Forms.TextBox();
@@ -39,39 +36,12 @@
             this.FingingFiguresGroupBox = new System.Windows.Forms.GroupBox();
             this.FindButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.TriangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.RectangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.CircleRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.FindingFigureList)).BeginInit();
             this.FingingFiguresGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TriangleCheckBox
-            // 
-            this.TriangleCheckBox.AutoSize = true;
-            this.TriangleCheckBox.Location = new System.Drawing.Point(12, 12);
-            this.TriangleCheckBox.Name = "TriangleCheckBox";
-            this.TriangleCheckBox.Size = new System.Drawing.Size(64, 17);
-            this.TriangleCheckBox.TabIndex = 0;
-            this.TriangleCheckBox.Text = "Triangle";
-            this.TriangleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // RectandleCheckBox
-            // 
-            this.RectandleCheckBox.AutoSize = true;
-            this.RectandleCheckBox.Location = new System.Drawing.Point(12, 35);
-            this.RectandleCheckBox.Name = "RectandleCheckBox";
-            this.RectandleCheckBox.Size = new System.Drawing.Size(75, 17);
-            this.RectandleCheckBox.TabIndex = 1;
-            this.RectandleCheckBox.Text = "Rectangle";
-            this.RectandleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // CircleChekBox
-            // 
-            this.CircleChekBox.AutoSize = true;
-            this.CircleChekBox.Location = new System.Drawing.Point(12, 58);
-            this.CircleChekBox.Name = "CircleChekBox";
-            this.CircleChekBox.Size = new System.Drawing.Size(52, 17);
-            this.CircleChekBox.TabIndex = 2;
-            this.CircleChekBox.Text = "Circle";
-            this.CircleChekBox.UseVisualStyleBackColor = true;
             // 
             // AreaRangeLabel
             // 
@@ -112,7 +82,7 @@
             this.FindingFigureList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FindingFigureList.Location = new System.Drawing.Point(3, 16);
             this.FindingFigureList.Name = "FindingFigureList";
-            this.FindingFigureList.Size = new System.Drawing.Size(242, 387);
+            this.FindingFigureList.Size = new System.Drawing.Size(250, 387);
             this.FindingFigureList.TabIndex = 7;
             // 
             // FingingFiguresGroupBox
@@ -120,7 +90,7 @@
             this.FingingFiguresGroupBox.Controls.Add(this.FindingFigureList);
             this.FingingFiguresGroupBox.Location = new System.Drawing.Point(236, 12);
             this.FingingFiguresGroupBox.Name = "FingingFiguresGroupBox";
-            this.FingingFiguresGroupBox.Size = new System.Drawing.Size(248, 406);
+            this.FingingFiguresGroupBox.Size = new System.Drawing.Size(256, 406);
             this.FingingFiguresGroupBox.TabIndex = 8;
             this.FingingFiguresGroupBox.TabStop = false;
             this.FingingFiguresGroupBox.Text = "Finging Figures";
@@ -134,21 +104,62 @@
             this.FindButton.TabIndex = 8;
             this.FindButton.Text = "Find";
             this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
             // CloseButton
             // 
-            this.CloseButton.Location = new System.Drawing.Point(397, 424);
+            this.CloseButton.Location = new System.Drawing.Point(408, 424);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(84, 40);
             this.CloseButton.TabIndex = 9;
             this.CloseButton.Text = "Cansel";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // TriangleRadioButton
+            // 
+            this.TriangleRadioButton.AutoSize = true;
+            this.TriangleRadioButton.Location = new System.Drawing.Point(12, 12);
+            this.TriangleRadioButton.Name = "TriangleRadioButton";
+            this.TriangleRadioButton.Size = new System.Drawing.Size(63, 17);
+            this.TriangleRadioButton.TabIndex = 10;
+            this.TriangleRadioButton.TabStop = true;
+            this.TriangleRadioButton.Text = "Triangle";
+            this.TriangleRadioButton.UseVisualStyleBackColor = true;
+            this.TriangleRadioButton.CheckedChanged += new System.EventHandler(this.TriangleRadioButton_CheckedChanged);
+            // 
+            // RectangleRadioButton
+            // 
+            this.RectangleRadioButton.AutoSize = true;
+            this.RectangleRadioButton.Location = new System.Drawing.Point(12, 35);
+            this.RectangleRadioButton.Name = "RectangleRadioButton";
+            this.RectangleRadioButton.Size = new System.Drawing.Size(74, 17);
+            this.RectangleRadioButton.TabIndex = 11;
+            this.RectangleRadioButton.TabStop = true;
+            this.RectangleRadioButton.Text = "Rectangle";
+            this.RectangleRadioButton.UseVisualStyleBackColor = true;
+            this.RectangleRadioButton.CheckedChanged += new System.EventHandler(this.RectangleRadioButton_CheckedChanged);
+            // 
+            // CircleRadioButton
+            // 
+            this.CircleRadioButton.AutoSize = true;
+            this.CircleRadioButton.Location = new System.Drawing.Point(12, 58);
+            this.CircleRadioButton.Name = "CircleRadioButton";
+            this.CircleRadioButton.Size = new System.Drawing.Size(51, 17);
+            this.CircleRadioButton.TabIndex = 12;
+            this.CircleRadioButton.TabStop = true;
+            this.CircleRadioButton.Text = "Circle";
+            this.CircleRadioButton.UseVisualStyleBackColor = true;
+            this.CircleRadioButton.CheckedChanged += new System.EventHandler(this.CircleRadioButton_CheckedChanged);
             // 
             // FindElementsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 476);
+            this.ClientSize = new System.Drawing.Size(504, 476);
+            this.Controls.Add(this.CircleRadioButton);
+            this.Controls.Add(this.RectangleRadioButton);
+            this.Controls.Add(this.TriangleRadioButton);
             this.Controls.Add(this.FindButton);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.FingingFiguresGroupBox);
@@ -156,9 +167,6 @@
             this.Controls.Add(this.ToAreaValueTextBox);
             this.Controls.Add(this.FromAreaValueTextBox);
             this.Controls.Add(this.AreaRangeLabel);
-            this.Controls.Add(this.CircleChekBox);
-            this.Controls.Add(this.RectandleCheckBox);
-            this.Controls.Add(this.TriangleCheckBox);
             this.Name = "FindElementsForm";
             this.Text = "FindElementsForm";
             ((System.ComponentModel.ISupportInitialize)(this.FindingFigureList)).EndInit();
@@ -169,10 +177,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox TriangleCheckBox;
-        private System.Windows.Forms.CheckBox RectandleCheckBox;
-        private System.Windows.Forms.CheckBox CircleChekBox;
         private System.Windows.Forms.Label AreaRangeLabel;
         private System.Windows.Forms.TextBox FromAreaValueTextBox;
         private System.Windows.Forms.TextBox ToAreaValueTextBox;
@@ -181,5 +185,8 @@
         private System.Windows.Forms.GroupBox FingingFiguresGroupBox;
         private System.Windows.Forms.Button FindButton;
         private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.RadioButton TriangleRadioButton;
+        private System.Windows.Forms.RadioButton RectangleRadioButton;
+        private System.Windows.Forms.RadioButton CircleRadioButton;
     }
 }

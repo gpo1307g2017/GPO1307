@@ -131,9 +131,10 @@ namespace ModelForm
                     {
                         using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
                         {
-                            BindingList<IFigure> deserializeFigures =
+                            BindingList<IFigure> deserializedFigures =
                                 (BindingList<IFigure>) formatter.Deserialize(fileStream);
-                            FiguresList.DataSource = deserializeFigures;
+                            FiguresList.DataSource = deserializedFigures;
+                            _figures = deserializedFigures;
                         }
                     }
                 }
@@ -146,9 +147,10 @@ namespace ModelForm
                 {
                     using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
                     {
-                        BindingList<IFigure> deserializeFigures =
+                        BindingList<IFigure> deserializedFigures =
                             (BindingList<IFigure>)formatter.Deserialize(fileStream);
-                        FiguresList.DataSource = deserializeFigures;
+                        FiguresList.DataSource = deserializedFigures;
+                        _figures = deserializedFigures;
                     }
                 }
             }
@@ -162,7 +164,7 @@ namespace ModelForm
 
         private void ExinButton_Click(object sender, EventArgs e)
         {
-            if (FiguresList.RowCount != 0)
+            if ((FiguresList.RowCount != 0) /*|| (_figures == deserealizatedFigures */)
             {
                 const string message = "You have unsaved data left. Do you want to save them before closing program?";
                 const string caption = "Save before close";

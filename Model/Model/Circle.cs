@@ -40,7 +40,7 @@ namespace Model
         }
 
         private double radius => _radius;
-        public string TypeFigure => "Ring";
+        public string TypeFigure => "Circle";
     }
 }
 
