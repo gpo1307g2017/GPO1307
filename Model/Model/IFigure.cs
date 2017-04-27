@@ -6,6 +6,12 @@ namespace Model
     /// </summary>
     public interface IFigure
     {
+        /// <summary>
+        /// Свойство вывода вида фигуры
+        /// </summary>
+        [System.ComponentModel.DisplayName("Figure Type")]
+	    string TypeFigure { get; }
+
 
         /// <summary>
         /// Свейство расчёта площади фигуры
@@ -22,10 +28,6 @@ namespace Model
         /// <param name="Площадь фигур"></param>
         string ShowArea();
 
-        /// <summary>
-        /// Свойство вывода вида фигуры
-        /// </summary>
-        [System.ComponentModel.DisplayName("Figure Type")]
-	    string TypeFigure { get; }
+        
     }
 }

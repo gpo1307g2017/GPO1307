@@ -104,7 +104,7 @@
             this.FindButton.TabIndex = 8;
             this.FindButton.Text = "Find";
             this.FindButton.UseVisualStyleBackColor = true;
-            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
+            this.FindButton.Visible = false;
             // 
             // CloseButton
             // 
@@ -167,6 +167,7 @@
             this.Controls.Add(this.ToAreaValueTextBox);
             this.Controls.Add(this.FromAreaValueTextBox);
             this.Controls.Add(this.AreaRangeLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FindElementsForm";
             this.Text = "FindElementsForm";
             ((System.ComponentModel.ISupportInitialize)(this.FindingFigureList)).EndInit();

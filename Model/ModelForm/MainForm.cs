@@ -4,11 +4,13 @@ using System.IO;
 using System.Windows.Forms;
 using Model;
 using System.Runtime.Serialization.Formatters.Binary;
+using ModelForm;
 
 namespace ModelForm
 {
     public partial class MainForm : Form
     {
+        private bool _isProjectChanged = false;
         
         private BindingList<IFigure> _figures = new BindingList<IFigure>();
 
@@ -35,6 +37,7 @@ namespace ModelForm
             if (addFigure.FigureData != null)
             {
                 _figures.Add(addFigure.FigureData);
+                _isProjectChanged = true;
             }
 
         }
@@ -44,6 +47,7 @@ namespace ModelForm
             foreach (DataGridViewRow listRow in FiguresList.SelectedRows)
             {
                 FiguresList.Rows.Remove(listRow);
+                _isProjectChanged = true;
             }
         }
  
@@ -75,6 +79,7 @@ namespace ModelForm
 
             FiguresList.DataSource = null;
             FiguresList.DataSource = _figures;
+            _isProjectChanged = true;
 #endif
         }
 
@@ -89,7 +94,7 @@ namespace ModelForm
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "dat files (*.dat)|*.dat";
                 sfd.FilterIndex = 1;
-                sfd.RestoreDirectory = true;
+                sfd.RestoreDirectory = false;
                 sfd.ShowDialog();
 
                 if (sfd.FileName != "")
@@ -99,6 +104,7 @@ namespace ModelForm
                     using (FileStream fileStream = new FileStream(sfd.FileName, FileMode.OpenOrCreate))
                     {
                         formatter.Serialize(fileStream, _figures);
+                        _isProjectChanged = false;
                     }
                 }
             }
@@ -127,44 +133,56 @@ namespace ModelForm
                 {
                     ofd.ShowDialog();
 
-                    if (ofd.FileName != "")
-                    {
-                        using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
-                        {
-                            BindingList<IFigure> deserializedFigures =
-                                (BindingList<IFigure>) formatter.Deserialize(fileStream);
-                            FiguresList.DataSource = deserializedFigures;
-                            _figures = deserializedFigures;
-                        }
-                    }
+                    OpenFile(ofd, formatter);
                 }
             }
             else
             {
                 ofd.ShowDialog();
 
-                if (ofd.FileName != "")
+                OpenFile(ofd,formatter);
+            }
+        }
+
+        private void OpenFile(OpenFileDialog _ofd, BinaryFormatter _formatter)
+        {
+            if (_ofd.FileName != "")
+            {
+                using (FileStream fileStream = new FileStream(_ofd.FileName, FileMode.OpenOrCreate))
                 {
-                    using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
-                    {
-                        BindingList<IFigure> deserializedFigures =
-                            (BindingList<IFigure>)formatter.Deserialize(fileStream);
-                        FiguresList.DataSource = deserializedFigures;
-                        _figures = deserializedFigures;
-                    }
+                    BindingList<IFigure> deserializedFigures =
+                        (BindingList<IFigure>)_formatter.Deserialize(fileStream);
+                    FiguresList.DataSource = deserializedFigures;
+                    _figures = deserializedFigures;
+                    _isProjectChanged = false;
                 }
             }
         }
 
         private void FindFigureButton_Click(object sender, EventArgs e)
         {
-            var fingingFigure = new FindElementsForm(_figures) {Owner = this};
-            fingingFigure.ShowDialog();
+            var fingingFigure = new FindElementsForm(_figures) { Owner = this };
+            try
+            {
+                if (_figures.Count == 0)
+                {
+                    throw new System.ArgumentException();
+                }
+                
+                fingingFigure.ShowDialog();
+            }
+            catch (System.ArgumentException)
+            {
+                MessageBox.Show("The original list does not have data", "Values Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+
+            }
+        
         }
 
-        private void ExinButton_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if ((FiguresList.RowCount != 0) /*|| (_figures == deserealizatedFigures */)
+            if (_isProjectChanged)
             {
                 const string message = "You have unsaved data left. Do you want to save them before closing program?";
                 const string caption = "Save before close";
@@ -188,5 +206,6 @@ namespace ModelForm
                 Close();
             }
         }
+
     }
 }
