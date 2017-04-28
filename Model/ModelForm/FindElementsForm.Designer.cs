@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindElementsForm));
             this.AreaRangeLabel = new System.Windows.Forms.Label();
             this.FromAreaValueTextBox = new System.Windows.Forms.TextBox();
             this.ToAreaValueTextBox = new System.Windows.Forms.TextBox();
@@ -51,6 +52,7 @@
             this.AreaRangeLabel.Size = new System.Drawing.Size(59, 13);
             this.AreaRangeLabel.TabIndex = 3;
             this.AreaRangeLabel.Text = "Area range";
+            this.AreaRangeLabel.Visible = false;
             // 
             // FromAreaValueTextBox
             // 
@@ -58,6 +60,7 @@
             this.FromAreaValueTextBox.Name = "FromAreaValueTextBox";
             this.FromAreaValueTextBox.Size = new System.Drawing.Size(59, 20);
             this.FromAreaValueTextBox.TabIndex = 4;
+            this.FromAreaValueTextBox.Visible = false;
             // 
             // ToAreaValueTextBox
             // 
@@ -65,6 +68,7 @@
             this.ToAreaValueTextBox.Name = "ToAreaValueTextBox";
             this.ToAreaValueTextBox.Size = new System.Drawing.Size(59, 20);
             this.ToAreaValueTextBox.TabIndex = 5;
+            this.ToAreaValueTextBox.Visible = false;
             // 
             // label1
             // 
@@ -75,6 +79,7 @@
             this.label1.Size = new System.Drawing.Size(16, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "-";
+            this.label1.Visible = false;
             // 
             // FindingFigureList
             // 
@@ -168,6 +173,7 @@
             this.Controls.Add(this.FromAreaValueTextBox);
             this.Controls.Add(this.AreaRangeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FindElementsForm";
             this.Text = "FindElementsForm";
             ((System.ComponentModel.ISupportInitialize)(this.FindingFigureList)).EndInit();

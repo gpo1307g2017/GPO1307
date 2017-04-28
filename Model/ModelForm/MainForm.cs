@@ -87,7 +87,7 @@ namespace ModelForm
         {
             if (FiguresList.RowCount == 0)
             {
-                MessageBox.Show("You can not save a list without items");
+                MessageBox.Show("You can not save a list without items","Save Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
             else
             {
@@ -182,7 +182,7 @@ namespace ModelForm
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_isProjectChanged)
+            if ((FiguresList.RowCount != 0) &&  (_isProjectChanged))
             {
                 const string message = "You have unsaved data left. Do you want to save them before closing program?";
                 const string caption = "Save before close";
@@ -206,6 +206,5 @@ namespace ModelForm
                 Close();
             }
         }
-
     }
 }

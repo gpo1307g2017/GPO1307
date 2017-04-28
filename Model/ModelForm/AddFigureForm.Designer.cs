@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFigureForm));
             this.FiguresTypeGroupBox = new System.Windows.Forms.GroupBox();
             this.CircleRadioButton = new System.Windows.Forms.RadioButton();
             this.RectangleRadioButton = new System.Windows.Forms.RadioButton();
@@ -265,6 +266,7 @@
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.FiguresTypeGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddFigureForm";
             this.Text = "Add Figure Form";
             this.Load += new System.EventHandler(this.AddFigureForm_Load);

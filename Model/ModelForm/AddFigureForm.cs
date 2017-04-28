@@ -109,7 +109,7 @@ namespace ModelForm
         {
             if (FigureAreaTextBox.Text == "")
             {
-                MessageBox.Show("Расчитайте площадь, только потом нажимайте кнопку \"OK \" ");
+                MessageBox.Show("Before adding a figure, calculated its area ","Add figure Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
