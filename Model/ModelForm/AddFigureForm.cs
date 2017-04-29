@@ -151,7 +151,7 @@ namespace ModelForm
         }
 
         /// <summary>
-        /// Кнопка "Close"
+        /// Кнопка "Закрыть форму"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

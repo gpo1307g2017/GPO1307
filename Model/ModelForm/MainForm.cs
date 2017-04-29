@@ -26,7 +26,7 @@ namespace ModelForm
         }
 
         /// <summary>
-        /// Кнопка "Добавить фигуру"
+        /// Кнопка "Добавить фигуру" (отдельная форма)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -42,6 +42,11 @@ namespace ModelForm
 
         }
 
+        /// <summary>
+        /// Кнопка "Удачить фигуру" 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveFigureButton_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow listRow in FiguresList.SelectedRows)
@@ -50,7 +55,12 @@ namespace ModelForm
                 _isProjectChanged = true;
             }
         }
- 
+
+        /// <summary>
+        /// Дебаг кнопка "Добавить случайную фигуру"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GenterateRandomFigureButton_Click(object sender, EventArgs e)
         {
 #if DEBUG
@@ -83,6 +93,11 @@ namespace ModelForm
 #endif
         }
 
+        /// <summary>
+        /// Кнопка в меню "Сохранить файл"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (FiguresList.RowCount == 0)
@@ -110,6 +125,11 @@ namespace ModelForm
             }
         }
 
+        /// <summary>
+        /// Кнопка в меню "Открыть файл"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
            BinaryFormatter formatter = new BinaryFormatter();
@@ -144,6 +164,11 @@ namespace ModelForm
             }
         }
 
+        /// <summary>
+        /// Метод проверки наличия имени файла при открытии
+        /// </summary>
+        /// <param OpenFileDialog="_ofd"></param>
+        /// <param BynaryFormatter="_formatter"></param>
         private void OpenFile(OpenFileDialog _ofd, BinaryFormatter _formatter)
         {
             if (_ofd.FileName != "")
@@ -159,6 +184,11 @@ namespace ModelForm
             }
         }
 
+        /// <summary>
+        /// Кнопка "Найти фигуры" (отдельная форма)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FindFigureButton_Click(object sender, EventArgs e)
         {
             var fingingFigure = new FindElementsForm(_figures) { Owner = this };
@@ -180,6 +210,11 @@ namespace ModelForm
         
         }
 
+        /// <summary>
+        /// Кнопка в меню "Выйти из программы"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if ((FiguresList.RowCount != 0) &&  (_isProjectChanged))
