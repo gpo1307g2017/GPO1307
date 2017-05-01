@@ -25,3 +25,11 @@ G:\Model\ConsoleModel\bin\Debug\ConsoleModel.exe
 G:\Model\ConsoleModel\bin\Debug\ConsoleModel.pdb
 G:\Model\ConsoleModel\bin\Debug\Model.dll
 G:\Model\ConsoleModel\bin\Debug\Model.pdb
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\bin\Debug\ConsoleModel.exe.config
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\bin\Debug\ConsoleModel.exe
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\bin\Debug\ConsoleModel.pdb
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\bin\Debug\Model.dll
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\bin\Debug\Model.pdb
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\obj\Debug\ConsoleModel.csprojResolveAssemblyReference.cache
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\obj\Debug\ConsoleModel.exe
+C:\Users\neshc\Desktop\GitHub\Model\ConsoleModel\obj\Debug\ConsoleModel.pdb

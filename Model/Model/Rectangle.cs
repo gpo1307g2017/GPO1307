@@ -19,14 +19,8 @@ namespace Model
         /// <param name="Ширина прямоугольника"></param>
         public Rectangle(double length, double width)
         {
-            if (length <= 0)
-            {
-                throw new System.FormatException();
-            }
-            if (width <= 0)
-            {
-                throw new System.FormatException();
-            }
+            CheckCorrectValue.CheckDoubleValue(length);
+            CheckCorrectValue.CheckDoubleValue(width);
             _length = length;
             _width = width;
         }

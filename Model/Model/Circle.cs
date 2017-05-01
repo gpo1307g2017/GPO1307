@@ -16,10 +16,7 @@ namespace Model
         /// <param name="Радиус круга"></param>
         public Circle(double radius)
         {
-            if (radius <= 0)
-            {
-                throw new System.FormatException();
-            }
+            CheckCorrectValue.CheckDoubleValue(radius);
             _radius = radius;
         }
 

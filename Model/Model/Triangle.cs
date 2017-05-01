@@ -19,14 +19,8 @@ namespace Model
         /// <param name="Высота треунгольника"></param>
         public Triangle(double mainside, double heigth)
         {
-            if (mainside <= 0)
-            {
-                throw new System.FormatException();
-            }
-            if (heigth <= 0)
-            {
-                throw new System.FormatException();
-            }
+            CheckCorrectValue.CheckDoubleValue(mainside);
+            CheckCorrectValue.CheckDoubleValue(heigth);
             _mainside = mainside;
             _height = heigth;
         }
