@@ -1,13 +1,11 @@
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\ModelUnitTest.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\ModelUnitTest.pdb
-C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\Model.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\ModelForm.exe
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\nunit.framework.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\ModelForm.pdb
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\Model.pdb
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\nunit.framework.xml
-C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\obj\Debug\ModelUnitTest.csprojResolveAssemblyReference.cache
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\obj\Debug\ModelUnitTest.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelUnitTest\obj\Debug\ModelUnitTest.pdb

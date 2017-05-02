@@ -30,6 +30,8 @@ namespace ConsoleModel
 
         static void Main(string[] args)
         {
+            double t = double.MaxValue;
+            Console.WriteLine("double.MaxValue = {0}",t);
                   
             Console.Write("Выберите фигуру (1-треугольник; 2-прямоугольник; 3-круг): ");
 
