@@ -12,6 +12,7 @@ namespace Model
         private double _length;
         private double _width;
 
+        //TODO: XMl-комментарий
         /// <summary>
         /// Конструктор локального объявления длинны и ширины
         /// </summary>
@@ -32,7 +33,7 @@ namespace Model
         /// </summary>
         public double CalculatedArea => Math.Round(_length * _width, 4);
 
-
+        //TODO: XMl-комментарий
         /// <summary>
         /// Метод вывода площади прямоугольника
         /// </summary>
@@ -42,6 +43,7 @@ namespace Model
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
 
+        //TODO: XMl-комментарий
         public string TypeFigure => "Rectangle";
     }
 }

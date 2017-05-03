@@ -9,11 +9,17 @@ namespace ModelForm
 {
     public partial class FindElementsForm : Form
     {
+        //TODO: Не по RSDN
+        //TODO: Плохо использовать строковые ключи
         string _figureType = "";
 
+
+        //TODO: Зачем 2 списка?
         private BindingList<IFigure> _findedFigures = new BindingList<IFigure>();
         private BindingList<IFigure> _constFiguresLits = new BindingList<IFigure>();
 
+        //TODO: XMl-комментарий
+//TODO: Не по RSDN
         /// <summary>
         /// Конструктор формы
         /// </summary>
@@ -56,7 +62,7 @@ namespace ModelForm
             _figureType = "Circle";
             FindElements(_figureType);
         }
-
+//TODO: XMl-комментарий
         /// <summary>
         /// Метод поиска фигур
         /// </summary>
@@ -75,10 +81,10 @@ namespace ModelForm
             {
                 MessageBox.Show("Select a figure type", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+//TODO: Не по RSDN
             _findedFigures = new BindingList<IFigure>(_constFiguresLits.Where(figure => figure.TypeFigure == _figureType).ToList());
             FindingFigureList.DataSource = _findedFigures;
-            //FindingFigureList.Sort();
+            //FindingFigureList.Sort(); //TODO: Зачем это?
         }
 
 
@@ -92,6 +98,7 @@ namespace ModelForm
             Close();
         }
 
+        //TODO: Зачем это?
         //private void FindButton_Click(object sender, EventArgs e)
         //{
         //    try

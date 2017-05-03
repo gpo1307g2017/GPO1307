@@ -11,7 +11,7 @@ namespace Model
 
         private double _mainside;
         private double _height;
-
+        //TODO: XMl-комментарий
         /// <summary>
         /// Конструктор лотального объявления основания и высоты
         /// </summary>
@@ -33,7 +33,7 @@ namespace Model
         /// </summary>        
         public double CalculatedArea => Math.Round(((_height * _mainside) / 3), 4);
 
-
+        //TODO: XMl-комментарий
         /// <summary>
         /// Метод вывода площади треугольника
         /// </summary>
@@ -42,7 +42,7 @@ namespace Model
         {
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
-
+        //TODO: XMl-комментарий
         public string TypeFigure => "Triangle";
     }
 }

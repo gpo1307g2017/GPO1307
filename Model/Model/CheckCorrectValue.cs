@@ -4,8 +4,10 @@ namespace Model
 {
     public static class CheckCorrectValue
     {
+        //TODO: XMl-комментарий
         public static void CheckDoubleValue(double ckeckedValue)
         {
+            //TODO: Оформление кода
             if (ckeckedValue <= 0)
         {
             throw new FormatException();

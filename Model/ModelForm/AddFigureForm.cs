@@ -5,8 +5,11 @@ using Model;
 
 namespace ModelForm
 {
+    //TODO: Падает при нажатии на CalculateArea при пустых полях
+    //TODO: Вводим символы, можно нажать на ОК, это не правильно
     public partial class AddFigureForm : Form
     {
+        //TODO: XMl-комментарий
         private TypesOfFigures _figureType;
 
         public AddFigureForm()
@@ -16,10 +19,11 @@ namespace ModelForm
 
         private void AddFigureForm_Load(object sender, EventArgs e)
         {
-
+            //TODO: Пустой обработчик
         }
 
         private IFigure _figure;
+        //TODO: XMl-комментарий
         public IFigure FigureData => _figure;
 
         /// <summary>
@@ -109,6 +113,7 @@ namespace ModelForm
         {
             if (FigureAreaTextBox.Text == "")
             {
+                //TODO: Длинная строка
                 MessageBox.Show("Before adding a figure, calculated its area ","Add figure Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
@@ -116,8 +121,8 @@ namespace ModelForm
                 Close();
             }
         }
-        
 
+        //TODO: XMl-комментарий, не надо привязываться к названию кнопки. Комментарий некорректный.
         /// <summary>
         /// Кнопка "Calculate Area". Расчёт площади фигуры
         /// </summary>

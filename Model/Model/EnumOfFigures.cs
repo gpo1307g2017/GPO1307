@@ -1,6 +1,6 @@
 ﻿namespace Model
 {
-    //TODO: Мия файла не по RSDN
+    //TODO: Имя файла не по RSDN
     /// <summary>
     /// Перечисление фигур
     /// </summary>

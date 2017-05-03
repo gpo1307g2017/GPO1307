@@ -22,6 +22,7 @@ namespace Model
         [System.ComponentModel.DisplayName("Figure Area")]
         double CalculatedArea { get; }
 
+        //TODO: XMl-комментарий
         /// <summary>
         /// Метод вывода площади фигуры
         /// </summary>

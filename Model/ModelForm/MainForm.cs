@@ -8,10 +8,11 @@ using ModelForm;
 
 namespace ModelForm
 {
+    //TODO: gitignor не настроен
     public partial class MainForm : Form
     {
         private bool _isProjectChanged = false;
-        
+        //TODO: XMl-комментарий
         private BindingList<IFigure> _figures = new BindingList<IFigure>();
 
         public MainForm()
@@ -67,6 +68,7 @@ namespace ModelForm
             var randomFigure = new Random();
 
             var figureType = randomFigure.Next(0, 3);
+//TODO: Не по RSDN
             double EstimatedSideA;
             double EstimatedSideB;
             switch (figureType)
@@ -105,7 +107,7 @@ namespace ModelForm
                 MessageBox.Show("You can not save a list without items","Save Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
             else
-            {
+            {//TODO: Не по RSDN
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "dat files (*.dat)|*.dat";
                 sfd.FilterIndex = 1;
@@ -132,7 +134,7 @@ namespace ModelForm
         /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           BinaryFormatter formatter = new BinaryFormatter();
+            BinaryFormatter formatter = new BinaryFormatter();
             OpenFileDialog ofd = new OpenFileDialog();
 
             if (FiguresList.RowCount != 0)
@@ -164,6 +166,7 @@ namespace ModelForm
             }
         }
 
+//TODO: Не по RSDN
         /// <summary>
         /// Метод проверки наличия имени файла при открытии
         /// </summary>
@@ -175,6 +178,7 @@ namespace ModelForm
             {
                 using (FileStream fileStream = new FileStream(_ofd.FileName, FileMode.OpenOrCreate))
                 {
+                    //TODO: Сериализация повреждённого файла падает
                     BindingList<IFigure> deserializedFigures =
                         (BindingList<IFigure>)_formatter.Deserialize(fileStream);
                     FiguresList.DataSource = deserializedFigures;

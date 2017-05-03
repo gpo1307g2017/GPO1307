@@ -10,6 +10,7 @@ namespace Model
     {
         private double _radius;
 
+        //TODO: XMl-комментарий
         /// <summary>
         /// Конструктор локального объявления радиуса
         /// </summary>
@@ -27,6 +28,7 @@ namespace Model
         /// </summary>
         public double CalculatedArea => Math.Round((Math.Pow(_radius, 2) * Math.PI), 4);
 
+        //TODO: XMl-комментарий
         /// <summary>
         /// Метод вывода площади круга
         /// </summary>
@@ -36,7 +38,10 @@ namespace Model
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
 
+        //TODO: Зачем это?
         private double radius => _radius;
+
+        //TODO: XMl-комментарий
         public string TypeFigure => "Circle";
     }
 }
