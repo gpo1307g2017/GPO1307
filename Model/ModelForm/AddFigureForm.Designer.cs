@@ -128,7 +128,7 @@
             // 
             // FigureAreaTextBox
             // 
-            this.FigureAreaTextBox.Location = new System.Drawing.Point(158, 121);
+            this.FigureAreaTextBox.Location = new System.Drawing.Point(158, 122);
             this.FigureAreaTextBox.Name = "FigureAreaTextBox";
             this.FigureAreaTextBox.Size = new System.Drawing.Size(100, 20);
             this.FigureAreaTextBox.TabIndex = 17;
@@ -155,11 +155,12 @@
             // 
             // RadiusTextBox
             // 
-            this.RadiusTextBox.Location = new System.Drawing.Point(158, 30);
+            this.RadiusTextBox.Location = new System.Drawing.Point(158, 29);
             this.RadiusTextBox.Name = "RadiusTextBox";
             this.RadiusTextBox.Size = new System.Drawing.Size(100, 20);
             this.RadiusTextBox.TabIndex = 2;
             this.RadiusTextBox.Visible = false;
+            this.RadiusTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // MainsideLabel
             // 
@@ -183,11 +184,12 @@
             // 
             // MainsideTextBox
             // 
-            this.MainsideTextBox.Location = new System.Drawing.Point(158, 31);
+            this.MainsideTextBox.Location = new System.Drawing.Point(158, 29);
             this.MainsideTextBox.Name = "MainsideTextBox";
             this.MainsideTextBox.Size = new System.Drawing.Size(100, 20);
             this.MainsideTextBox.TabIndex = 2;
             this.MainsideTextBox.Visible = false;
+            this.MainsideTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // HeigthTextBox
             // 
@@ -196,6 +198,7 @@
             this.HeigthTextBox.Size = new System.Drawing.Size(100, 20);
             this.HeigthTextBox.TabIndex = 3;
             this.HeigthTextBox.Visible = false;
+            this.HeigthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // LengthLabel
             // 
@@ -224,6 +227,7 @@
             this.LengthTextBox.Size = new System.Drawing.Size(100, 20);
             this.LengthTextBox.TabIndex = 2;
             this.LengthTextBox.Visible = false;
+            this.LengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // WidthTextBox
             // 
@@ -232,6 +236,7 @@
             this.WidthTextBox.Size = new System.Drawing.Size(100, 20);
             this.WidthTextBox.TabIndex = 3;
             this.WidthTextBox.Visible = false;
+            this.WidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // ChoseFigureLabel
             // 
@@ -251,9 +256,9 @@
             this.Controls.Add(this.ChoseFigureLabel);
             this.Controls.Add(this.RadiusTextBox);
             this.Controls.Add(this.HeigthTextBox);
+            this.Controls.Add(this.MainsideTextBox);
             this.Controls.Add(this.RadiusLabel);
             this.Controls.Add(this.WidthTextBox);
-            this.Controls.Add(this.MainsideTextBox);
             this.Controls.Add(this.LengthTextBox);
             this.Controls.Add(this.HeigthLabel);
             this.Controls.Add(this.MainsideLabel);
@@ -269,7 +274,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddFigureForm";
             this.Text = "Add Figure Form";
-            this.Load += new System.EventHandler(this.AddFigureForm_Load);
             this.FiguresTypeGroupBox.ResumeLayout(false);
             this.FiguresTypeGroupBox.PerformLayout();
             this.ResumeLayout(false);

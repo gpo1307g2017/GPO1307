@@ -8,7 +8,7 @@ namespace Model
         public static void CheckDoubleValue(double ckeckedValue)
         {
             //TODO: Оформление кода
-            if (ckeckedValue <= 0)
+            if (ckeckedValue < 0)
         {
             throw new FormatException();
         }

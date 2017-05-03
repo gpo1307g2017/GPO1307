@@ -13,7 +13,7 @@ namespace Model
         private double _height;
         //TODO: XMl-комментарий
         /// <summary>
-        /// Конструктор лотального объявления основания и высоты
+        /// Конструктор локального объявления основания и высоты
         /// </summary>
         /// <param name="Основание треугольника"></param>
         /// <param name="Высота треунгольника"></param>
@@ -43,6 +43,9 @@ namespace Model
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
         //TODO: XMl-комментарий
+        /// <summary>
+        /// Свойство определения типа фигуры
+        /// </summary>
         public string TypeFigure => "Triangle";
     }
 }

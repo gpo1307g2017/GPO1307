@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Windows.Forms;
 using Model;
+using NUnit.Framework.Constraints;
 
 
 namespace ModelForm
 {
     //TODO: Падает при нажатии на CalculateArea при пустых полях
-    //TODO: Вводим символы, можно нажать на ОК, это не правильно
     public partial class AddFigureForm : Form
     {
         //TODO: XMl-комментарий
-        private TypesOfFigures _figureType;
+        private FigureType _figureType;
 
         public AddFigureForm()
         {
             InitializeComponent();
-        }
-
-        private void AddFigureForm_Load(object sender, EventArgs e)
-        {
-            //TODO: Пустой обработчик
         }
 
         private IFigure _figure;
@@ -33,6 +28,8 @@ namespace ModelForm
         /// <param name="e"></param>
         private void TriangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            FigureAreaTextBox.Text = string.Empty;
+
             ChoseFigureLabel.Visible = false;
 
             MainsideLabel.Visible = true;
@@ -49,7 +46,7 @@ namespace ModelForm
             
             WidthTextBox.Visible = false;
             WidthLabel.Visible = false;
-            _figureType = TypesOfFigures.Triangle;
+            _figureType = FigureType.Triangle;
         }
 
         /// <summary>
@@ -59,6 +56,8 @@ namespace ModelForm
         /// <param name="e"></param>
         private void RectangleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            FigureAreaTextBox.Text = string.Empty;
+
             ChoseFigureLabel.Visible = false;
 
             MainsideLabel.Visible = false;
@@ -75,7 +74,7 @@ namespace ModelForm
             
             WidthTextBox.Visible = true;
             WidthLabel.Visible = true;
-            _figureType = TypesOfFigures.Rectangle;
+            _figureType = FigureType.Rectangle;
         }
 
         /// <summary>
@@ -85,6 +84,8 @@ namespace ModelForm
         /// <param name="e"></param>
         private void CircleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            FigureAreaTextBox.Text = string.Empty;
+
             ChoseFigureLabel.Visible = false;
 
             MainsideLabel.Visible = false;
@@ -101,7 +102,7 @@ namespace ModelForm
             
             WidthTextBox.Visible = false;
             WidthLabel.Visible = false;
-            _figureType = TypesOfFigures.Ring;
+            _figureType = FigureType.Ring;
         }
 
         /// <summary>
@@ -114,7 +115,8 @@ namespace ModelForm
             if (FigureAreaTextBox.Text == "")
             {
                 //TODO: Длинная строка
-                MessageBox.Show("Before adding a figure, calculated its area ","Add figure Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Before adding a figure, calculated its area ","Add figure Error"
+                 ,MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
@@ -124,7 +126,8 @@ namespace ModelForm
 
         //TODO: XMl-комментарий, не надо привязываться к названию кнопки. Комментарий некорректный.
         /// <summary>
-        /// Кнопка "Calculate Area". Расчёт площади фигуры
+        /// Кнопка "Calculate Area".
+        /// Расчитываем площадь выбранной фигуры
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -132,26 +135,47 @@ namespace ModelForm
         {
             switch (_figureType)
             {
-                case TypesOfFigures.Triangle:
-                    double mainside = Convert.ToDouble(MainsideTextBox.Text);
-                    double heigth = Convert.ToDouble(HeigthTextBox.Text);
-                    _figure = new Triangle(mainside, heigth);
-                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                case FigureType.Triangle:
+                    if (IsTextBoxEmptyCheck(MainsideTextBox.Text) || IsTextBoxEmptyCheck(HeigthTextBox.Text))
+                    {
+                        MessageBox.Show("Before calculating the area, enter the values of the sides ",
+                            "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        double mainside = Convert.ToDouble(MainsideTextBox.Text);
+                        double heigth = Convert.ToDouble(HeigthTextBox.Text);
+                        _figure = new Triangle(mainside, heigth);
+                        FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                    }
+                    break;
+                case FigureType.Rectangle:
+                    if (IsTextBoxEmptyCheck(LengthTextBox.Text) || IsTextBoxEmptyCheck(WidthTextBox.Text))
+                    {
+                        MessageBox.Show("Before calculating the area, enter the values of the sides ",
+                            "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        double length = Convert.ToDouble(LengthTextBox.Text);
+                        double width = Convert.ToDouble(WidthTextBox.Text);
+                        _figure = new Rectangle(length, width);
+                        FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                    }
                     break;
 
-                case TypesOfFigures.Rectangle:
-                    double length = Convert.ToDouble(LengthTextBox.Text);
-                    double width = Convert.ToDouble(WidthTextBox.Text);
-                    _figure = new Rectangle(length, width);
-                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                case FigureType.Ring:
+                    if (IsTextBoxEmptyCheck(RadiusTextBox.Text))
+                    {
+                        MessageBox.Show("Before calculating the area, enter the values of the sides ",
+                            "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        _figure = new Circle(Convert.ToDouble(RadiusTextBox.Text));
+                        FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                    }
                     break;
-
-                case TypesOfFigures.Ring:
-                    _figure = new Circle(Convert.ToDouble(RadiusTextBox.Text));
-                    FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
-                    break;
-
-
             }
         }
 
@@ -164,6 +188,30 @@ namespace ModelForm
         {
             _figure = null;
             Close();
+        }
+
+        /// <summary>
+        /// Событие на исключение ввода символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param Поле TextBox="e"></param>
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar != 44) && (e.KeyChar != 8) && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param Текст в TextBox ="Text"></param>
+        /// <returns></returns>
+        public bool IsTextBoxEmptyCheck(string Text)
+        {
+            if (Text == string.Empty)
+                return true;
+
+            return false;
         }
     }
 }

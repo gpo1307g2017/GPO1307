@@ -1,10 +1,9 @@
 ﻿namespace Model
 {
-    //TODO: Имя файла не по RSDN
     /// <summary>
     /// Перечисление фигур
     /// </summary>
-    public enum TypesOfFigures
+    public enum FigureType
     {
         Triangle = 1,
         Rectangle,

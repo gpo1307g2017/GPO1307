@@ -44,6 +44,9 @@ namespace Model
         }
 
         //TODO: XMl-комментарий
+        /// <summary>
+        /// Свойство определения типа фигуры
+        /// </summary>
         public string TypeFigure => "Rectangle";
     }
 }

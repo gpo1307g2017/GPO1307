@@ -38,10 +38,10 @@ namespace Model
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
 
-        //TODO: Зачем это?
-        private double radius => _radius;
-
         //TODO: XMl-комментарий
+        /// <summary>
+        /// Свойство определения типа фигуры
+        /// </summary>
         public string TypeFigure => "Circle";
     }
 }

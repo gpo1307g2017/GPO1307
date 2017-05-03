@@ -61,7 +61,7 @@ namespace ConsoleModel
 
             switch (select)
             {
-                case (int)TypesOfFigures.Triangle:
+                case (int)FigureType.Triangle:
                     Console.Write("Введите основание треугольника: ");
 
                     string stringMainsideTriangle = null;
@@ -91,7 +91,7 @@ namespace ConsoleModel
                     Console.Read();
                     break;
                
-                case (int)TypesOfFigures.Rectangle:
+                case (int)FigureType.Rectangle:
                     Console.Write("Введите длину прямоугольника: ");
 
                     string stringLengthRectangle = null;
@@ -124,7 +124,7 @@ namespace ConsoleModel
                     Console.Read();
                     break;
                 
-                case (int)TypesOfFigures.Ring:
+                case (int)FigureType.Ring:
                     Console.Write("Введите радиус круга: ");
 
                     string stringRadiusCirlce = null;
