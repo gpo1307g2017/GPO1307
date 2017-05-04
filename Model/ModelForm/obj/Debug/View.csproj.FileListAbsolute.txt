@@ -62,3 +62,5 @@ C:\Users\neshc\Desktop\GitHub\Model\ModelForm\obj\Debug\ModelForm.FindElementsFo
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\obj\Debug\ModelForm.FindElementsForm.resources
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\nunit.framework.dll
 C:\Users\NeshCroft\Desktop\ГПО\GitHub\Model\ModelForm\bin\Debug\nunit.framework.xml
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\bin\Debug\nunit.framework.dll
+C:\Users\neshc\Desktop\GitHub\Model\ModelForm\bin\Debug\nunit.framework.xml

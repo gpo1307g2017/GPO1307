@@ -11,12 +11,13 @@ namespace ModelForm
     {
         //TODO: Не по RSDN
         //TODO: Плохо использовать строковые ключи
-        string _figureType = "";
+         string _figureType = "";
 
 
         //TODO: Зачем 2 списка?
         private BindingList<IFigure> _findedFigures = new BindingList<IFigure>();
-        private BindingList<IFigure> _constFiguresLits = new BindingList<IFigure>();
+
+        private readonly BindingList<IFigure> _constFiguresLits;
 
         //TODO: XMl-комментарий
 //TODO: Не по RSDN
@@ -62,11 +63,11 @@ namespace ModelForm
             _figureType = "Circle";
             FindElements(_figureType);
         }
-//TODO: XMl-комментарий
+        //TODO: XMl-комментарий
         /// <summary>
         /// Метод поиска фигур
         /// </summary>
-        /// <param TypeOfFigures="figureType"></param>
+        /// <param name="figureType"></param>
         private void FindElements(string figureType)
         {
             try

@@ -48,7 +48,7 @@ namespace ModelUnitTest.Model
         public void AreaTest(double length, double width)
         {
             var rectangle = new Rectangle(length,width);
-            Assert.AreEqual(Math.Round(length * width), 4, rectangle.CalculatedArea);
+            Assert.AreEqual(Math.Round(length * width, 4), rectangle.CalculatedArea);
         }
     }
 }
