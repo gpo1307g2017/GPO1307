@@ -29,6 +29,8 @@ namespace ModelUnitTest.Model
         [TestCase(double.PositiveInfinity, ExpectedException = typeof(NotFiniteNumberException),
             TestName = "Тестирование площади при радиусе = +Inf")]
 
+        // Тестоывй метод проверки площади круга
+        // Передаётся radius-радиус круга,
         public void AreaTest(double radius)
         {
             var circle = new Circle(radius);

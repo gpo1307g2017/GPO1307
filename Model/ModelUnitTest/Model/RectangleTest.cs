@@ -46,6 +46,8 @@ namespace ModelUnitTest.Model
         [TestCase(double.PositiveInfinity, double.PositiveInfinity, ExpectedException = typeof(NotFiniteNumberException), 
             TestName = "Тестирование площади при длине = +Inf, ширине = +Inf")]
 
+        // Тестоывй метод проверки площади прямоугольника
+        // Передаётся lenght-длина, width-ширина
         public void AreaTest(double length, double width)
         {
             var rectangle = new Rectangle(length,width);

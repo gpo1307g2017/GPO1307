@@ -10,11 +10,11 @@ namespace Model
     {
         private double _radius;
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Конструктор локального объявления радиуса
         /// </summary>
-        /// <param name="Радиус круга"></param>
+        /// <param name="radius">Double значение радиуса круга</param>
         public Circle(double radius)
         {
             CheckCorrectValue.CheckDoubleValue(radius);
@@ -28,21 +28,21 @@ namespace Model
         /// </summary>
         public double CalculatedArea => Math.Round((Math.Pow(_radius, 2) * Math.PI), 4);
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Метод вывода площади круга
         /// </summary>
-        /// <param name="Площадь круга"></param>
+        /// <returns>Площадь круга в символьной форме</returns>
         public string ShowArea()
         {
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check?)
         /// <summary>
-        /// Свойство определения типа фигуры
+        /// Тип фигуры = круг
         /// </summary>
-        public string TypeFigure => "Circle";
+        public FigureType TypeFigure => FigureType.Circle;
     }
 }
 

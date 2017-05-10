@@ -48,7 +48,9 @@ namespace ModelUnitTest.Model
 
         [TestCase(double.PositiveInfinity, double.PositiveInfinity,ExpectedException = typeof(NotFiniteNumberException), 
             TestName = "Тестирование площади при основании = +Inf, высоте = +Inf")]
-
+        
+        // Тестоывй метод проверки площади треугольника
+        // Передаётся mainside-основание, height-высота
         public void AreaTest(double mainside, double height)
         {
             var triangle = new Triangle(mainside,height);

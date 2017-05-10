@@ -12,12 +12,12 @@ namespace Model
         private double _length;
         private double _width;
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Конструктор локального объявления длинны и ширины
         /// </summary>
-        /// <param name="Длинна прямоугольника"></param>
-        /// <param name="Ширина прямоугольника"></param>
+        /// <param name="length">Длина прямоугольника</param>
+        /// <param name="width">Ширина прямоугольника</param>
         public Rectangle(double length, double width)
         {
             CheckCorrectValue.CheckDoubleValue(length);
@@ -26,27 +26,25 @@ namespace Model
             _width = width;
         }
 
-
-
         /// <summary>
         /// Метод расчёта площади прямоугольника
         /// </summary>
         public double CalculatedArea => Math.Round(_length * _width, 4);
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Метод вывода площади прямоугольника
         /// </summary>
-        /// <param name="Площадь прямоугольника"></param>
+        /// <returns>Площадь прямоугольника в символьной форме</returns>
         public string ShowArea()
         {
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
-        /// Свойство определения типа фигуры
+        /// Тип фигуры = прямоугольник
         /// </summary>
-        public string TypeFigure => "Rectangle";
+        public FigureType TypeFigure => FigureType.Rectangle;
     }
 }

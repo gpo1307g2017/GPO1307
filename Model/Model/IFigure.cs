@@ -10,23 +10,20 @@ namespace Model
         /// Свойство вывода вида фигуры
         /// </summary>
         [System.ComponentModel.DisplayName("Figure Type")]
-	    string TypeFigure { get; }
+	    FigureType TypeFigure { get; }
 
 
         /// <summary>
         /// Свейство расчёта площади фигуры
         /// </summary>
-        /// <returns></returns>
-        //[DisplayAttribute(Name = "Фамилия")]
-        //[RequiredAttribute()]
         [System.ComponentModel.DisplayName("Figure Area")]
         double CalculatedArea { get; }
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Метод вывода площади фигуры
         /// </summary>
-        /// <param name="Площадь фигур"></param>
+        /// <returns>Площадь фигуры в символьном виде</returns>
         string ShowArea();
 
         

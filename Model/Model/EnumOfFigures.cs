@@ -7,6 +7,6 @@
     {
         Triangle = 1,
         Rectangle,
-        Ring
+        Circle
     };
 }

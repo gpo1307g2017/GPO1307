@@ -4,15 +4,17 @@ using System.IO;
 using System.Windows.Forms;
 using Model;
 using System.Runtime.Serialization.Formatters.Binary;
-using ModelForm;
 
 namespace ModelForm
 {
-    //TODO: gitignor не настроен
+    //TODO: gitignor не настроен(?)
     public partial class MainForm : Form
     {
         private bool _isProjectChanged = false;
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
+        /// <summary>
+        /// Список фигур
+        /// </summary>
         private BindingList<IFigure> _figures = new BindingList<IFigure>();
 
         public MainForm()
@@ -66,26 +68,31 @@ namespace ModelForm
         {
 #if DEBUG
             var randomFigure = new Random();
-
-            var figureType = randomFigure.Next(0, 3);
-//TODO: Не по RSDN
-            double EstimatedSideA;
-            double EstimatedSideB;
+            
+            var figureType = randomFigure.Next(1, 3);
+//TODO: Не по RSDN(check?)
+            double randomSideA;
+            double randomSideB;
             switch (figureType)
             {
-                case 0:
-                    var radius = randomFigure.NextDouble() * randomFigure.Next(1, 11);
+                // Ветка круга
+                case 1:
+                    var radius = randomFigure.NextDouble() * randomFigure.Next(1, 20);
                     _figures.Add(new Circle(radius));
                     break;
-                case 1:
-                    EstimatedSideA = randomFigure.NextDouble() * randomFigure.Next(1, 11);
-                    EstimatedSideB = randomFigure.NextDouble() * randomFigure.Next(1, 11);
-                    _figures.Add(new Rectangle(EstimatedSideA, EstimatedSideB));
-                    break;
+
+                // Ветка прямоугольника
                 case 2:
-                    EstimatedSideA = randomFigure.NextDouble() * randomFigure.Next(1, 11);
-                    EstimatedSideB = randomFigure.NextDouble() * randomFigure.Next(1, 11);
-                    _figures.Add(new Triangle(EstimatedSideA, EstimatedSideB));
+                    randomSideA = randomFigure.NextDouble() * randomFigure.Next(1, 20);
+                    randomSideB = randomFigure.NextDouble() * randomFigure.Next(1, 20);
+                    _figures.Add(new Rectangle(randomSideA, randomSideB));
+                    break;
+
+                // Ветка треугольника
+                case 3:
+                    randomSideA = randomFigure.NextDouble() * randomFigure.Next(1, 20);
+                    randomSideB = randomFigure.NextDouble() * randomFigure.Next(1, 20);
+                    _figures.Add(new Triangle(randomSideA, randomSideB));
                     break;
             }
 
@@ -107,18 +114,18 @@ namespace ModelForm
                 MessageBox.Show("You can not save a list without items","Save Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
             else
-            {//TODO: Не по RSDN
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "dat files (*.dat)|*.dat";
-                sfd.FilterIndex = 1;
-                sfd.RestoreDirectory = false;
-                sfd.ShowDialog();
+            {//TODO: Не по RSDN(check?)
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "dat files (*.dat)|*.dat";
+                saveFileDialog.FilterIndex = 1;
+                saveFileDialog.RestoreDirectory = false;
+                saveFileDialog.ShowDialog();
 
-                if (sfd.FileName != "")
+                if (saveFileDialog.FileName != "")
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
 
-                    using (FileStream fileStream = new FileStream(sfd.FileName, FileMode.OpenOrCreate))
+                    using (FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
                     {
                         formatter.Serialize(fileStream, _figures);
                         _isProjectChanged = false;
@@ -135,7 +142,7 @@ namespace ModelForm
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            OpenFileDialog ofd = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
             if (FiguresList.RowCount != 0)
             {
@@ -148,37 +155,37 @@ namespace ModelForm
                 if (messageResult == DialogResult.Yes)
                 {
                     saveToolStripMenuItem_Click(sender,e);
-                    ofd.ShowDialog();
+                    openFileDialog.ShowDialog();
                 }
 
                 if (messageResult == DialogResult.No)
                 {
-                    ofd.ShowDialog();
+                    openFileDialog.ShowDialog();
 
-                    OpenFile(ofd, formatter);
+                    OpenFile(openFileDialog, formatter);
                 }
             }
             else
             {
-                ofd.ShowDialog();
+                openFileDialog.ShowDialog();
 
-                OpenFile(ofd,formatter);
+                OpenFile(openFileDialog,formatter);
             }
         }
 
-//TODO: Не по RSDN
+        //TODO: Не по RSDN(check?)
         /// <summary>
         /// Метод проверки наличия имени файла при открытии
         /// </summary>
-        /// <param OpenFileDialog="_ofd"></param>
-        /// <param BynaryFormatter="_formatter"></param>
-        private void OpenFile(OpenFileDialog _ofd, BinaryFormatter _formatter)
+        /// <param name="_openFileDialog">Диалог открытия файла</param>
+        /// <param name="_formatter">Бинарный форматёр</param>
+        private void OpenFile(OpenFileDialog _openFileDialog, BinaryFormatter _formatter)
         {
-            if (_ofd.FileName != "")
+            if (_openFileDialog.FileName != "")
             {
-                using (FileStream fileStream = new FileStream(_ofd.FileName, FileMode.OpenOrCreate))
+                using (FileStream fileStream = new FileStream(_openFileDialog.FileName, FileMode.OpenOrCreate))
                 {
-                    //TODO: Сериализация повреждённого файла падает
+                    //TODO: Сериализация повреждённого файла падает(?)
                     BindingList<IFigure> deserializedFigures =
                         (BindingList<IFigure>)_formatter.Deserialize(fileStream);
                     FiguresList.DataSource = deserializedFigures;
@@ -195,7 +202,7 @@ namespace ModelForm
         /// <param name="e"></param>
         private void FindFigureButton_Click(object sender, EventArgs e)
         {
-            var fingingFigure = new FindElementsForm(_figures) { Owner = this };
+            var fingingFigure = new SearchElementsForm(_figures) { Owner = this };
             try
             {
                 if (_figures.Count == 0)

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using Model;
-using NUnit.Framework.Constraints;
 
 
 namespace ModelForm
 {
-    //TODO: Падает при нажатии на CalculateArea при пустых полях
     public partial class AddFigureForm : Form
     {
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check?)
+        /// <summary>
+        /// Переменная для определения типа фигуры
+        /// </summary>
         private FigureType _figureType;
 
         public AddFigureForm()
@@ -18,7 +19,10 @@ namespace ModelForm
         }
 
         private IFigure _figure;
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
+        /// <summary>
+        /// Список фигур
+        /// </summary>
         public IFigure FigureData => _figure;
 
         /// <summary>
@@ -102,7 +106,7 @@ namespace ModelForm
             
             WidthTextBox.Visible = false;
             WidthLabel.Visible = false;
-            _figureType = FigureType.Ring;
+            _figureType = FigureType.Circle;
         }
 
         /// <summary>
@@ -124,7 +128,7 @@ namespace ModelForm
             }
         }
 
-        //TODO: XMl-комментарий, не надо привязываться к названию кнопки. Комментарий некорректный.
+        //TODO: XMl-комментарий, не надо привязываться к названию кнопки. Комментарий некорректный.(?)
         /// <summary>
         /// Кнопка "Calculate Area".
         /// Расчитываем площадь выбранной фигуры
@@ -135,46 +139,74 @@ namespace ModelForm
         {
             switch (_figureType)
             {
+                // Ветка треугольника
                 case FigureType.Triangle:
-                    if (IsTextBoxEmptyCheck(MainsideTextBox.Text) || IsTextBoxEmptyCheck(HeigthTextBox.Text))
+                    try
+                    {
+                        if (IsTextBoxEmptyCheck(MainsideTextBox.Text) || IsTextBoxEmptyCheck(HeigthTextBox.Text))
+                        {
+                            throw new NotFiniteNumberException();
+                        }
+                        else
+                        {
+                            double mainside = Convert.ToDouble(MainsideTextBox.Text);
+                            double heigth = Convert.ToDouble(HeigthTextBox.Text);
+                            _figure = new Triangle(mainside, heigth);
+                            FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                        }
+                    }
+                    catch (NotFiniteNumberException)
                     {
                         MessageBox.Show("Before calculating the area, enter the values of the sides ",
-                            "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else
-                    {
-                        double mainside = Convert.ToDouble(MainsideTextBox.Text);
-                        double heigth = Convert.ToDouble(HeigthTextBox.Text);
-                        _figure = new Triangle(mainside, heigth);
-                        FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
-                    }
-                    break;
-                case FigureType.Rectangle:
-                    if (IsTextBoxEmptyCheck(LengthTextBox.Text) || IsTextBoxEmptyCheck(WidthTextBox.Text))
-                    {
-                        MessageBox.Show("Before calculating the area, enter the values of the sides ",
-                            "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        double length = Convert.ToDouble(LengthTextBox.Text);
-                        double width = Convert.ToDouble(WidthTextBox.Text);
-                        _figure = new Rectangle(length, width);
-                        FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
-                    }
+
                     break;
 
-                case FigureType.Ring:
-                    if (IsTextBoxEmptyCheck(RadiusTextBox.Text))
+                // Ветка прямоугольника
+                case FigureType.Rectangle:
+                    try
+                    {
+                        if (IsTextBoxEmptyCheck(LengthTextBox.Text) || IsTextBoxEmptyCheck(WidthTextBox.Text))
+                        {
+                            throw new NotFiniteNumberException();
+                        }
+                        else
+                        {
+                            double length = Convert.ToDouble(LengthTextBox.Text);
+                            double width = Convert.ToDouble(WidthTextBox.Text);
+                            _figure = new Rectangle(length, width);
+                            FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                        }
+                    }
+                    catch (NotFiniteNumberException)
                     {
                         MessageBox.Show("Before calculating the area, enter the values of the sides ",
                             "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else
+
+                    break;
+
+                // Ветка круга
+                case FigureType.Circle:
+                    try
                     {
-                        _figure = new Circle(Convert.ToDouble(RadiusTextBox.Text));
-                        FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                        if (IsTextBoxEmptyCheck(RadiusTextBox.Text))
+                        {
+                            throw new NotFiniteNumberException();
+                        }
+                        else
+                        {
+                            _figure = new Circle(Convert.ToDouble(RadiusTextBox.Text));
+                            FigureAreaTextBox.Text = Convert.ToString(_figure.CalculatedArea);
+                        }
                     }
+                    catch (NotFiniteNumberException)
+                    {
+                        MessageBox.Show("Before calculating the area, enter the values of the sides ",
+                            "Calculating Area Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                     break;
             }
         }
@@ -194,7 +226,7 @@ namespace ModelForm
         /// Событие на исключение ввода символов
         /// </summary>
         /// <param name="sender"></param>
-        /// <param Поле TextBox="e"></param>
+        /// <param name="e">Нажимаемая клавиша клавиатуры</param>
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar != 44) && (e.KeyChar != 8) && (e.KeyChar < 48 || e.KeyChar > 57))
@@ -202,9 +234,9 @@ namespace ModelForm
         }
 
         /// <summary>
-        /// 
+        /// Проверка непустоты вводимых данных
         /// </summary>
-        /// <param Текст в TextBox ="Text"></param>
+        /// <param name="Text">Символы вводимые в TextBox</param>
         /// <returns></returns>
         public bool IsTextBoxEmptyCheck(string Text)
         {
@@ -213,5 +245,6 @@ namespace ModelForm
 
             return false;
         }
+        
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ModelForm
 {
-    partial class FindElementsForm
+    partial class SearchElementsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindElementsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchElementsForm));
             this.AreaRangeLabel = new System.Windows.Forms.Label();
             this.FromAreaValueTextBox = new System.Windows.Forms.TextBox();
             this.ToAreaValueTextBox = new System.Windows.Forms.TextBox();
@@ -157,7 +157,7 @@
             this.CircleRadioButton.UseVisualStyleBackColor = true;
             this.CircleRadioButton.CheckedChanged += new System.EventHandler(this.CircleRadioButton_CheckedChanged);
             // 
-            // FindElementsForm
+            // SearchElementsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,8 +174,8 @@
             this.Controls.Add(this.AreaRangeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FindElementsForm";
-            this.Text = "FindElementsForm";
+            this.Name = "SearchElementsForm";
+            this.Text = "SearchElementsForm";
             ((System.ComponentModel.ISupportInitialize)(this.FindingFigureList)).EndInit();
             this.FingingFiguresGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);

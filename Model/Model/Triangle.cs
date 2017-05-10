@@ -11,12 +11,12 @@ namespace Model
 
         private double _mainside;
         private double _height;
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Конструктор локального объявления основания и высоты
         /// </summary>
-        /// <param name="Основание треугольника"></param>
-        /// <param name="Высота треунгольника"></param>
+        /// <param name="mainside">Основание треугольника</param>
+        /// <param name="heigth">Высота треугольника</param>
         public Triangle(double mainside, double heigth)
         {
             CheckCorrectValue.CheckDoubleValue(mainside);
@@ -25,27 +25,25 @@ namespace Model
             _height = heigth;
         }
 
-
-
-
         /// <summary>
         /// Метод расчёта прощади треугольника
         /// </summary>        
         public double CalculatedArea => Math.Round(((_height * _mainside) / 3), 4);
 
-        //TODO: XMl-комментарий
+        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Метод вывода площади треугольника
         /// </summary>
-        /// <param name="Площадь треугольника"></param>
+        /// <returns>Площадь треугольника в символьной форме</returns>
         public string ShowArea()
         {
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
-        //TODO: XMl-комментарий
+
+        //TODO: XMl-комментарий(check)
         /// <summary>
-        /// Свойство определения типа фигуры
+        /// Тип фигуры = треугольник
         /// </summary>
-        public string TypeFigure => "Triangle";
+        public FigureType TypeFigure => FigureType.Triangle;
     }
 }
