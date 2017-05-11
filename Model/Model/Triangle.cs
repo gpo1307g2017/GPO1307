@@ -11,7 +11,7 @@ namespace Model
 
         private double _mainside;
         private double _height;
-        //TODO: XMl-комментарий(check)
+       
         /// <summary>
         /// Конструктор локального объявления основания и высоты
         /// </summary>
@@ -29,8 +29,7 @@ namespace Model
         /// Метод расчёта прощади треугольника
         /// </summary>        
         public double CalculatedArea => Math.Round(((_height * _mainside) / 3), 4);
-
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Метод вывода площади треугольника
         /// </summary>
@@ -40,7 +39,6 @@ namespace Model
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
 
-        //TODO: XMl-комментарий(check)
         /// <summary>
         /// Тип фигуры = треугольник
         /// </summary>

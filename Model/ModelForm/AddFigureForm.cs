@@ -7,7 +7,6 @@ namespace ModelForm
 {
     public partial class AddFigureForm : Form
     {
-        //TODO: XMl-комментарий(check?)
         /// <summary>
         /// Переменная для определения типа фигуры
         /// </summary>
@@ -19,7 +18,7 @@ namespace ModelForm
         }
 
         private IFigure _figure;
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Список фигур
         /// </summary>
@@ -118,9 +117,8 @@ namespace ModelForm
         {
             if (FigureAreaTextBox.Text == "")
             {
-                //TODO: Длинная строка
-                MessageBox.Show("Before adding a figure, calculated its area ","Add figure Error"
-                 ,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Before adding a figure, calculated its area ", "Add figure Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -128,7 +126,6 @@ namespace ModelForm
             }
         }
 
-        //TODO: XMl-комментарий, не надо привязываться к названию кнопки. Комментарий некорректный.(?)
         /// <summary>
         /// Кнопка "Calculate Area".
         /// Расчитываем площадь выбранной фигуры
@@ -245,6 +242,5 @@ namespace ModelForm
 
             return false;
         }
-        
     }
 }

@@ -7,24 +7,19 @@ namespace ModelForm
 {
     public partial class SearchElementsForm : Form
     {
-        //TODO: Не по RSDN(check?)
-        //TODO: Плохо использовать строковые ключи(check)
-         private FigureType _figureType;
-
+        private FigureType _figureType;
 
         private BindingList<IFigure> _findedFiguresList = new BindingList<IFigure>();
 
         private readonly BindingList<IFigure> _constFiguresLits;
 
-        //TODO: XMl-комментарий(check?)
-        //TODO: Не по RSDN(check)
         /// <summary>
         /// Конструктор формы
         /// </summary>
-        /// <param name="_figures">Начальный список фигур в котором мы осуществляем поиск</param>
-        public SearchElementsForm(BindingList<IFigure> _figures)
+        /// <param name="figures">Начальный список фигур в котором мы осуществляем поиск</param>
+        public SearchElementsForm(BindingList<IFigure> figures)
         {
-            _constFiguresLits = _figures;
+            _constFiguresLits = figures;
             InitializeComponent();
         }
 
@@ -60,19 +55,17 @@ namespace ModelForm
             _figureType = FigureType.Circle;
             FindElements(_figureType);
         }
-        //TODO: XMl-комментарий(check?)
+        
         /// <summary>
         /// Метод поиска фигур
         /// </summary>
         /// <param name="figureType">Тип фигуры</param>
         private void FindElements(FigureType figureType)
         {
-            //TODO: Не по RSDN(check?)
             _findedFiguresList =
-                new BindingList<IFigure>(_constFiguresLits.Where(figure => figure.TypeFigure == _figureType).ToList());
+                new BindingList<IFigure>(_constFiguresLits.Where(figure => figure.TypeFigure == figureType).ToList());
             FindingFigureList.DataSource = _findedFiguresList;
         }
-
 
         /// <summary>
         /// Кнопка "Закрыть форму"

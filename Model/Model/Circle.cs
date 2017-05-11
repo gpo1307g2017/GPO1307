@@ -9,8 +9,7 @@ namespace Model
     public class Circle : IFigure
     {
         private double _radius;
-
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Конструктор локального объявления радиуса
         /// </summary>
@@ -21,14 +20,11 @@ namespace Model
             _radius = radius;
         }
 
-
-
         /// <summary>
         /// Свойство площади круга
         /// </summary>
         public double CalculatedArea => Math.Round((Math.Pow(_radius, 2) * Math.PI), 4);
-
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Метод вывода площади круга
         /// </summary>
@@ -37,8 +33,7 @@ namespace Model
         {
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
-
-        //TODO: XMl-комментарий(check?)
+        
         /// <summary>
         /// Тип фигуры = круг
         /// </summary>

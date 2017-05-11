@@ -1,17 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Windows.Forms;
 using Model;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ModelForm
 {
-    //TODO: gitignor не настроен(?)
     public partial class MainForm : Form
     {
         private bool _isProjectChanged = false;
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Список фигур
         /// </summary>
@@ -70,7 +70,6 @@ namespace ModelForm
             var randomFigure = new Random();
             
             var figureType = randomFigure.Next(1, 3);
-//TODO: Не по RSDN(check?)
             double randomSideA;
             double randomSideB;
             switch (figureType)
@@ -114,7 +113,7 @@ namespace ModelForm
                 MessageBox.Show("You can not save a list without items","Save Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
             else
-            {//TODO: Не по RSDN(check?)
+            {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "dat files (*.dat)|*.dat";
                 saveFileDialog.FilterIndex = 1;
@@ -144,7 +143,7 @@ namespace ModelForm
             BinaryFormatter formatter = new BinaryFormatter();
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            if (FiguresList.RowCount != 0)
+            if ( (_isProjectChanged) && FiguresList.RowCount != 0 )
             {
                 const string message = "You have unsaved data left. Do you want to save them before opening other data?";
                 const string caption = "Save before open";
@@ -173,7 +172,6 @@ namespace ModelForm
             }
         }
 
-        //TODO: Не по RSDN(check?)
         /// <summary>
         /// Метод проверки наличия имени файла при открытии
         /// </summary>
@@ -185,11 +183,18 @@ namespace ModelForm
             {
                 using (FileStream fileStream = new FileStream(_openFileDialog.FileName, FileMode.OpenOrCreate))
                 {
-                    //TODO: Сериализация повреждённого файла падает(?)
-                    BindingList<IFigure> deserializedFigures =
-                        (BindingList<IFigure>)_formatter.Deserialize(fileStream);
-                    FiguresList.DataSource = deserializedFigures;
+                    try
+                    {
+                        BindingList<IFigure> deserializedFigures =
+                            (BindingList<IFigure>) _formatter.Deserialize(fileStream);
+                        FiguresList.DataSource = deserializedFigures;
                     _figures = deserializedFigures;
+                    }
+                    catch (SerializationException)
+                    {
+                        MessageBox.Show("Deserialization is not possible. The file may have been corrupted ", "Deserialization Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     _isProjectChanged = false;
                 }
             }

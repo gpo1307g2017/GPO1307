@@ -8,11 +8,9 @@ namespace Model
     [Serializable]
     public class Rectangle : IFigure
     {
-
         private double _length;
         private double _width;
-
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Конструктор локального объявления длинны и ширины
         /// </summary>
@@ -30,8 +28,7 @@ namespace Model
         /// Метод расчёта площади прямоугольника
         /// </summary>
         public double CalculatedArea => Math.Round(_length * _width, 4);
-
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Метод вывода площади прямоугольника
         /// </summary>
@@ -40,8 +37,7 @@ namespace Model
         {
             return Convert.ToString(Convert.ToString(CalculatedArea));
         }
-
-        //TODO: XMl-комментарий(check)
+        
         /// <summary>
         /// Тип фигуры = прямоугольник
         /// </summary>
